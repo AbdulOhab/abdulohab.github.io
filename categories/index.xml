@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Abdul Wahab</title>
+    <link>https://abdulwahab.github.io/categories/</link>
+    <description>Recent content in Categories on Abdul Wahab</description>
+    <image>
+      <title>Abdul Wahab</title>
+      <url>https://abdulwahab.github.io/images/abdul-wahab.jpg</url>
+      <link>https://abdulwahab.github.io/images/abdul-wahab.jpg</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>bn-bd</language>
+    <lastBuildDate>Sun, 25 May 2025 10:30:00 +0600</lastBuildDate>
+    <atom:link href="https://abdulwahab.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ওয়েব ডেভেলপমেন্ট</title>
+      <link>https://abdulwahab.github.io/categories/%E0%A6%93%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%AC-%E0%A6%A1%E0%A7%87%E0%A6%AD%E0%A7%87%E0%A6%B2%E0%A6%AA%E0%A6%AE%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/</link>
+      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
+      <guid>https://abdulwahab.github.io/categories/%E0%A6%93%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%AC-%E0%A6%A1%E0%A7%87%E0%A6%AD%E0%A7%87%E0%A6%B2%E0%A6%AA%E0%A6%AE%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>টিউটোরিয়াল</title>
+      <link>https://abdulwahab.github.io/categories/%E0%A6%9F%E0%A6%BF%E0%A6%89%E0%A6%9F%E0%A7%8B%E0%A6%B0%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%B2/</link>
+      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
+      <guid>https://abdulwahab.github.io/categories/%E0%A6%9F%E0%A6%BF%E0%A6%89%E0%A6%9F%E0%A7%8B%E0%A6%B0%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%B2/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

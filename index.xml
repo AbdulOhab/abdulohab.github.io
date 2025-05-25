@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Abdul Wahab</title>
+    <link>https://abdulwahab.github.io/</link>
+    <description>Recent content on Abdul Wahab</description>
+    <image>
+      <title>Abdul Wahab</title>
+      <url>https://abdulwahab.github.io/images/abdul-wahab.jpg</url>
+      <link>https://abdulwahab.github.io/images/abdul-wahab.jpg</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>bn-bd</language>
+    <lastBuildDate>Sun, 25 May 2025 10:30:00 +0600</lastBuildDate>
+    <atom:link href="https://abdulwahab.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo দিয়ে কীভাবে একটি দ্রুত ও আধুনিক ব্লগ তৈরি করবেন</title>
+      <link>https://abdulwahab.github.io/blogs/2025/hugo-blog-tutorial-bangla/</link>
+      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
+      <guid>https://abdulwahab.github.io/blogs/2025/hugo-blog-tutorial-bangla/</guid>
+      <description>Hugo static site generator ব্যবহার করে কীভাবে একটি দ্রুত, নিরাপদ এবং আধুনিক ব্লগ তৈরি করবেন - সম্পূর্ণ বাংলা গাইড</description>
+    </item>
+    <item>
+      <title>Getting Started with Hugo PaperMod: A Complete Guide to Building Beautiful Static Sites</title>
+      <link>https://abdulwahab.github.io/blogs/2025/-papermod_theme_learn-copy/</link>
+      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
+      <guid>https://abdulwahab.github.io/blogs/2025/-papermod_theme_learn-copy/</guid>
+      <description>&lt;p&gt;Hugo has revolutionized the way we build static websites, and when paired with the right theme, it becomes an incredibly powerful tool for developers and content creators alike. One theme that stands out in the Hugo ecosystem is &lt;strong&gt;PaperMod&lt;/strong&gt; - a fast, clean, and highly customizable theme that&amp;rsquo;s perfect for blogs, portfolios, and documentation sites.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-hugo-papermod&#34;&gt;What is Hugo PaperMod?&lt;/h2&gt;
+&lt;p&gt;PaperMod is a popular Hugo theme that emphasizes speed, simplicity, and user experience. Built with modern web standards in mind, it offers a clean, minimalist design that loads lightning-fast and looks great on all devices. The theme has gained massive popularity in the Hugo community due to its extensive customization options and developer-friendly features.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo দিয়ে কীভাবে একটি দ্রুত ও আধুনিক ব্লগ তৈরি করবেন</title>
+      <link>https://abdulwahab.github.io/blogs/2025/-papermod_bangla/</link>
+      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
+      <guid>https://abdulwahab.github.io/blogs/2025/-papermod_bangla/</guid>
+      <description>Hugo static site generator ব্যবহার করে কীভাবে একটি দ্রুত, নিরাপদ এবং আধুনিক ব্লগ তৈরি করবেন - সম্পূর্ণ বাংলা গাইড</description>
+    </item>
+    <item>
+      <title>Welcome to Hugo</title>
+      <link>https://abdulwahab.github.io/blogs/2023/your-post-title/</link>
+      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
+      <guid>https://abdulwahab.github.io/blogs/2023/your-post-title/</guid>
+      <description>Learn the basics of Hugo static site generator and how to create your first website.</description>
+    </item>
+    <item>
+      <title>Your Post Title</title>
+      <link>https://abdulwahab.github.io/blogs/2022/your-post-title/</link>
+      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
+      <guid>https://abdulwahab.github.io/blogs/2022/your-post-title/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;description-learn-the-basics-of-hugo-static-site-generator-and-how-to-create-your-first-website&#34;&gt;title: &amp;ldquo;Getting Started with Hugo: A Beginner&amp;rsquo;s Guide&amp;rdquo;
+date: 2025-05-24T15:30:00+06:00
+draft: false
+tags: [&amp;ldquo;hugo&amp;rdquo;, &amp;ldquo;web-development&amp;rdquo;, &amp;ldquo;static-sites&amp;rdquo;]
+categories: [&amp;ldquo;tutorials&amp;rdquo;, &amp;ldquo;salafi&amp;rdquo;]
+description: &amp;ldquo;Learn the basics of Hugo static site generator and how to create your first website.&amp;rdquo;&lt;/h2&gt;
+&lt;h1 id=&#34;welcome-to-hugo&#34;&gt;Welcome to Hugo!&lt;/h1&gt;
+&lt;p&gt;Hugo is a fast and flexible static site generator that makes building websites easy and enjoyable. In this article, we&amp;rsquo;ll explore the basics of getting started with Hugo.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-hugo&#34;&gt;What is Hugo?&lt;/h2&gt;
+&lt;p&gt;Hugo is an open-source static site generator written in Go. It&amp;rsquo;s designed to be fast, secure, and easy to use. Unlike traditional content management systems, Hugo generates static HTML files that can be served from any web server.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About Me</title>
+      <link>https://abdulwahab.github.io/about/</link>
+      <pubDate>Sat, 25 Jan 2025 13:17:42 +0600</pubDate>
+      <guid>https://abdulwahab.github.io/about/</guid>
+      <description>&lt;p&gt;I am &lt;strong&gt;Md. Abdul Ohab Sarker&lt;/strong&gt;, a passionate and detail-oriented Software Engineer with a strong foundation in Computer Science and Engineering. With hands-on experience in full-stack web development, DevOps, and IT management, I have led multiple Laravel-based projects from concept to deployment. I’m also actively involved in programming contests and have contributed to science education through articles published in Byapon Youth Science Magazine. I enjoy building impactful tech solutions and continuously learning new technologies.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>আমার HTML পোস্ট</title>
+      <link>https://abdulwahab.github.io/blogs/2025/my_html/</link>
+      <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://abdulwahab.github.io/blogs/2025/my_html/</guid>
+      <description>&lt;h1 id=&#34;নরমল-markdown&#34;&gt;নরমাল Markdown&lt;/h1&gt;
+&lt;p&gt;এখানে HTML যোগ করা যায়:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>E-commerce Website</title>
+      <link>https://abdulwahab.github.io/projects/ecommerce-website-part-2/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://abdulwahab.github.io/projects/ecommerce-website-part-2/</guid>
+      <description>একটি সম্পূর্ণ ই-কমার্স ওয়েবসাইট Laravel এবং Vue.js দিয়ে তৈরি</description>
+    </item>
+    <item>
+      <title>E-commerce Website</title>
+      <link>https://abdulwahab.github.io/projects/ecommerce-website/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://abdulwahab.github.io/projects/ecommerce-website/</guid>
+      <description>একটি সম্পূর্ণ ই-কমার্স ওয়েবসাইট Laravel এবং Vue.js দিয়ে তৈরি</description>
+    </item>
+  </channel>
+</rss>
