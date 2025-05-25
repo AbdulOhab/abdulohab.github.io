@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Laravel on Abdul Wahab</title>
-    <link>https://abduloahab.github.io/tags/laravel/</link>
+    <link>https://abdulohab.github.io/tags/laravel/</link>
     <description>Recent content in Laravel on Abdul Wahab</description>
     <image>
       <title>Abdul Wahab</title>
-      <url>https://abduloahab.github.io/images/abdul-wahab.jpg</url>
-      <link>https://abduloahab.github.io/images/abdul-wahab.jpg</link>
+      <url>https://abdulohab.github.io/images/abdul-wahab.jpg</url>
+      <link>https://abdulohab.github.io/images/abdul-wahab.jpg</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>bn-bd</language>
     <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://abduloahab.github.io/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://abdulohab.github.io/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>E-commerce Website</title>
-      <link>https://abduloahab.github.io/projects/ecommerce-website-part-2/</link>
+      <link>https://abdulohab.github.io/projects/ecommerce-website-part-2/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://abduloahab.github.io/projects/ecommerce-website-part-2/</guid>
+      <guid>https://abdulohab.github.io/projects/ecommerce-website-part-2/</guid>
       <description>একটি সম্পূর্ণ ই-কমার্স ওয়েবসাইট Laravel এবং Vue.js দিয়ে তৈরি</description>
     </item>
     <item>
       <title>E-commerce Website</title>
-      <link>https://abduloahab.github.io/projects/ecommerce-website/</link>
+      <link>https://abdulohab.github.io/projects/ecommerce-website/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://abduloahab.github.io/projects/ecommerce-website/</guid>
+      <guid>https://abdulohab.github.io/projects/ecommerce-website/</guid>
       <description>একটি সম্পূর্ণ ই-কমার্স ওয়েবসাইট Laravel এবং Vue.js দিয়ে তৈরি</description>
     </item>
   </channel>

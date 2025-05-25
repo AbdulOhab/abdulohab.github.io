@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Static-Sites on Abdul Wahab</title>
-    <link>https://abduloahab.github.io/tags/static-sites/</link>
+    <link>https://abdulohab.github.io/tags/static-sites/</link>
     <description>Recent content in Static-Sites on Abdul Wahab</description>
     <image>
       <title>Abdul Wahab</title>
-      <url>https://abduloahab.github.io/images/abdul-wahab.jpg</url>
-      <link>https://abduloahab.github.io/images/abdul-wahab.jpg</link>
+      <url>https://abdulohab.github.io/images/abdul-wahab.jpg</url>
+      <link>https://abdulohab.github.io/images/abdul-wahab.jpg</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>bn-bd</language>
     <lastBuildDate>Sat, 24 May 2025 21:43:31 +0600</lastBuildDate>
-    <atom:link href="https://abduloahab.github.io/tags/static-sites/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://abdulohab.github.io/tags/static-sites/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Hugo</title>
-      <link>https://abduloahab.github.io/blogs/2023/your-post-title/</link>
+      <link>https://abdulohab.github.io/blogs/2023/your-post-title/</link>
       <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
-      <guid>https://abduloahab.github.io/blogs/2023/your-post-title/</guid>
+      <guid>https://abdulohab.github.io/blogs/2023/your-post-title/</guid>
       <description>Learn the basics of Hugo static site generator and how to create your first website.</description>
     </item>
   </channel>
