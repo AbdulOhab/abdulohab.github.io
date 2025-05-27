@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>bn-bd</language>
-    <lastBuildDate>Sun, 25 May 2025 10:30:00 +0600</lastBuildDate>
+    <lastBuildDate>Tue, 27 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://abdulohab.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo দিয়ে কীভাবে একটি দ্রুত ও আধুনিক ব্লগ তৈরি করবেন</title>
@@ -19,6 +19,13 @@
       <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
       <guid>https://abdulohab.github.io/blogs/2025/hugo-blog-tutorial-bangla/</guid>
       <description>Hugo static site generator ব্যবহার করে কীভাবে একটি দ্রুত, নিরাপদ এবং আধুনিক ব্লগ তৈরি করবেন - সম্পূর্ণ বাংলা গাইড</description>
+    </item>
+    <item>
+      <title>John Doe - Senior Software Engineer</title>
+      <link>https://abdulohab.github.io/portfolio/</link>
+      <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://abdulohab.github.io/portfolio/</guid>
+      <description>Results-driven Senior Software Engineer with 8+ years of experience in full-stack development. Specialized in JavaScript frameworks (React, Node.js) and cloud technologies (AWS). Proven track record of delivering scalable solutions that improve performance and user experience. Passionate about clean code, mentorship, and continuous learning.</description>
     </item>
     <item>
       <title>Getting Started with Hugo PaperMod: A Complete Guide to Building Beautiful Static Sites</title>
