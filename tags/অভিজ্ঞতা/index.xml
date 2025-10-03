@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>অভিজ্ঞতা on Abdul Wahab</title>
-    <link>http://localhost:1313/tags/%E0%A6%85%E0%A6%AD%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%A4%E0%A6%BE/</link>
+    <link>https://abdulohab.github.io/tags/%E0%A6%85%E0%A6%AD%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%A4%E0%A6%BE/</link>
     <description>Recent content in অভিজ্ঞতা on Abdul Wahab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>bn-bd</language>
@@ -10,14 +10,14 @@
     <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
     <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
     <lastBuildDate>Thu, 02 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E0%A6%85%E0%A6%AD%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%A4%E0%A6%BE/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://abdulohab.github.io/tags/%E0%A6%85%E0%A6%AD%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%A4%E0%A6%BE/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>দিন দুয়েকের অভিজ্ঞতা</title>
-      <link>http://localhost:1313/issues/blog-2/</link>
+      <link>https://abdulohab.github.io/issues/blog-2/</link>
       <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-2/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-2/</guid>
       <description>&lt;p&gt;গত কয়েক দিনের অভিজ্ঞতা নিয়ে আজ কিছু কথা। প্রতিদিন কিছু না কিছু শিখতে পারছি।&lt;/p&gt;</description>
       
       

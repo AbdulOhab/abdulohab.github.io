@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Static-Sites on Abdul Wahab</title>
-    <link>http://localhost:1313/tags/static-sites/</link>
+    <link>https://abdulohab.github.io/tags/static-sites/</link>
     <description>Recent content in Static-Sites on Abdul Wahab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>bn-bd</language>
@@ -10,14 +10,14 @@
     <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
     <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
     <lastBuildDate>Sat, 24 May 2025 21:43:31 +0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/static-sites/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://abdulohab.github.io/tags/static-sites/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Welcome to Hugo</title>
-      <link>http://localhost:1313/blogs/2023/your-post-title/</link>
+      <link>https://abdulohab.github.io/blogs/2023/your-post-title/</link>
       <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/blogs/2023/your-post-title/</guid>
+      <guid>https://abdulohab.github.io/blogs/2023/your-post-title/</guid>
       <description>&lt;h1 id=&#34;welcome-to-hugo&#34;&gt;Welcome to Hugo!&lt;/h1&gt;
 &lt;p&gt;Hugo is a fast and flexible static site generator that makes building websites easy and enjoyable. In this article, we&amp;rsquo;ll explore the basics of getting started with Hugo.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-hugo&#34;&gt;What is Hugo?&lt;/h2&gt;

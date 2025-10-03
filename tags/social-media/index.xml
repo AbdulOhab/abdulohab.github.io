@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Social-Media on Abdul Wahab</title>
-    <link>http://localhost:1313/tags/social-media/</link>
+    <link>https://abdulohab.github.io/tags/social-media/</link>
     <description>Recent content in Social-Media on Abdul Wahab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>bn-bd</language>
@@ -10,14 +10,14 @@
     <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
     <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
     <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/social-media/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://abdulohab.github.io/tags/social-media/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Lorem Ipsum Project Four</title>
-      <link>http://localhost:1313/projects/project-4/</link>
+      <link>https://abdulohab.github.io/projects/project-4/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/projects/project-4/</guid>
+      <guid>https://abdulohab.github.io/projects/project-4/</guid>
       <description>&lt;h1 id=&#34;lorem-ipsum-project-four&#34;&gt;Lorem Ipsum Project Four&lt;/h1&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
 &lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;

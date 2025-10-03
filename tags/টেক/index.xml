@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>টেক on Abdul Wahab</title>
-    <link>http://localhost:1313/tags/%E0%A6%9F%E0%A7%87%E0%A6%95/</link>
+    <link>https://abdulohab.github.io/tags/%E0%A6%9F%E0%A7%87%E0%A6%95/</link>
     <description>Recent content in টেক on Abdul Wahab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>bn-bd</language>
@@ -10,14 +10,14 @@
     <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
     <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
     <lastBuildDate>Sun, 05 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E0%A6%9F%E0%A7%87%E0%A6%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://abdulohab.github.io/tags/%E0%A6%9F%E0%A7%87%E0%A6%95/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>একটি নতুন শুরু</title>
-      <link>http://localhost:1313/issues/blog-5/</link>
+      <link>https://abdulohab.github.io/issues/blog-5/</link>
       <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-5/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-5/</guid>
       <description>&lt;p&gt;আজ আমি একটি নতুন প্রজেক্ট শুরু করেছি। আশা করি এটি সফল হবে। নতুন কিছু শেখার সুযোগ পেলাম।&lt;/p&gt;</description>
       
       
@@ -36,10 +36,10 @@
     
     <item>
       <title>শিখছি নতুন কিছু</title>
-      <link>http://localhost:1313/issues/blog-3/</link>
+      <link>https://abdulohab.github.io/issues/blog-3/</link>
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-3/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-3/</guid>
       <description>&lt;p&gt;আজ আমি একটি নতুন প্রোগ্রামিং ল্যাঙ্গুয়েজ শিখতে শুরু করেছি। এটি কিছুটা কঠিন কিন্তু আগ্রহজনক।&lt;/p&gt;</description>
       
       

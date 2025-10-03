@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abdul Wahab</title>
-    <link>http://localhost:1313/</link>
+    <link>https://abdulohab.github.io/</link>
     <description>Recent content on Abdul Wahab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>bn-bd</language>
@@ -10,14 +10,14 @@
     <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
     <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
     <lastBuildDate>Fri, 12 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://abdulohab.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Lorem Ipsum Project One</title>
-      <link>http://localhost:1313/projects/project-1/</link>
+      <link>https://abdulohab.github.io/projects/project-1/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/projects/project-1/</guid>
+      <guid>https://abdulohab.github.io/projects/project-1/</guid>
       <description>&lt;h1 id=&#34;lorem-ipsum-project-one&#34;&gt;Lorem Ipsum Project One&lt;/h1&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
 &lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;
@@ -35,10 +35,10 @@
     
     <item>
       <title>Lorem Ipsum Project Two</title>
-      <link>http://localhost:1313/projects/project-2/</link>
+      <link>https://abdulohab.github.io/projects/project-2/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/projects/project-2/</guid>
+      <guid>https://abdulohab.github.io/projects/project-2/</guid>
       <description>&lt;h1 id=&#34;lorem-ipsum-project-two&#34;&gt;Lorem Ipsum Project Two&lt;/h1&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
 &lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;
@@ -56,10 +56,10 @@
     
     <item>
       <title>Lorem Ipsum Project Three</title>
-      <link>http://localhost:1313/projects/project-3/</link>
+      <link>https://abdulohab.github.io/projects/project-3/</link>
       <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/projects/project-3/</guid>
+      <guid>https://abdulohab.github.io/projects/project-3/</guid>
       <description>&lt;h1 id=&#34;lorem-ipsum-project-three&#34;&gt;Lorem Ipsum Project Three&lt;/h1&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
 &lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;
@@ -77,10 +77,10 @@
     
     <item>
       <title>Lorem Ipsum Project Four</title>
-      <link>http://localhost:1313/projects/project-4/</link>
+      <link>https://abdulohab.github.io/projects/project-4/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/projects/project-4/</guid>
+      <guid>https://abdulohab.github.io/projects/project-4/</guid>
       <description>&lt;h1 id=&#34;lorem-ipsum-project-four&#34;&gt;Lorem Ipsum Project Four&lt;/h1&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
 &lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;
@@ -100,10 +100,10 @@
     
     <item>
       <title>Lorem Ipsum Project Five</title>
-      <link>http://localhost:1313/projects/project-5/</link>
+      <link>https://abdulohab.github.io/projects/project-5/</link>
       <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/projects/project-5/</guid>
+      <guid>https://abdulohab.github.io/projects/project-5/</guid>
       <description>&lt;h1 id=&#34;lorem-ipsum-project-five&#34;&gt;Lorem Ipsum Project Five&lt;/h1&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
 &lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;
@@ -125,20 +125,20 @@
     
     <item>
       <title>Md. Abdul Ohab Sarker - Software Engineer</title>
-      <link>http://localhost:1313/portfolio/</link>
+      <link>https://abdulohab.github.io/portfolio/</link>
       <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/portfolio/</guid>
+      <guid>https://abdulohab.github.io/portfolio/</guid>
       <description>Software Engineer with a strong academic foundation in core computer science areas, including software engineering, system optimization, databases, and computer networks. Experienced in IT operations, system management, and web development through professional roles. Adept at combining theoretical knowledge with hands-on project execution to deliver innovative and practical solutions, effectively bridging the gap between academia and industry.</description>
       
     </item>
     
     <item>
       <title>Getting Started with Hugo PaperMod: A Complete Guide to Building Beautiful Static Sites</title>
-      <link>http://localhost:1313/blogs/2025/papermod_theme_learn-copy/</link>
+      <link>https://abdulohab.github.io/blogs/2025/papermod_theme_learn-copy/</link>
       <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/blogs/2025/papermod_theme_learn-copy/</guid>
+      <guid>https://abdulohab.github.io/blogs/2025/papermod_theme_learn-copy/</guid>
       <description>&lt;!-- # Getting Started with Hugo PaperMod: A Complete Guide to Building Beautiful Static Sites --&gt;
 &lt;p&gt;Hugo has revolutionized the way we build static websites, and when paired with the right theme, it becomes an incredibly powerful tool for developers and content creators alike. One theme that stands out in the Hugo ecosystem is &lt;strong&gt;PaperMod&lt;/strong&gt; - a fast, clean, and highly customizable theme that&amp;rsquo;s perfect for blogs, portfolios, and documentation sites.&lt;/p&gt;</description>
       
@@ -158,10 +158,10 @@
     
     <item>
       <title>Palantir: A Deep Dive into the Data Integration Powerhouse</title>
-      <link>http://localhost:1313/ai/</link>
+      <link>https://abdulohab.github.io/ai/</link>
       <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/ai/</guid>
+      <guid>https://abdulohab.github.io/ai/</guid>
       <description>&lt;h1 id=&#34;palantir-a-deep-dive-into-the-data-integration-powerhouse&#34;&gt;Palantir: A Deep Dive into the Data Integration Powerhouse&lt;/h1&gt;
 &lt;p&gt;In an era dominated by data, the ability to effectively integrate, analyze, and act upon vast and disparate information streams has become a critical differentiator for organizations. Among the companies that have carved a significant niche in this complex domain, Palantir Technologies stands out as a name both synonymous with powerful data fusion platforms and shrouded in a degree of mystique. This article delves into what Palantir is, its core technologies, key applications, and the controversies that often accompany its operations.&lt;/p&gt;</description>
       
@@ -181,10 +181,10 @@
     
     <item>
       <title>Welcome to Hugo</title>
-      <link>http://localhost:1313/blogs/2023/your-post-title/</link>
+      <link>https://abdulohab.github.io/blogs/2023/your-post-title/</link>
       <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/blogs/2023/your-post-title/</guid>
+      <guid>https://abdulohab.github.io/blogs/2023/your-post-title/</guid>
       <description>&lt;h1 id=&#34;welcome-to-hugo&#34;&gt;Welcome to Hugo!&lt;/h1&gt;
 &lt;p&gt;Hugo is a fast and flexible static site generator that makes building websites easy and enjoyable. In this article, we&amp;rsquo;ll explore the basics of getting started with Hugo.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-hugo&#34;&gt;What is Hugo?&lt;/h2&gt;
@@ -202,10 +202,10 @@
     
     <item>
       <title>Your Post Title</title>
-      <link>http://localhost:1313/blogs/2022/your-post-title/</link>
+      <link>https://abdulohab.github.io/blogs/2022/your-post-title/</link>
       <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/blogs/2022/your-post-title/</guid>
+      <guid>https://abdulohab.github.io/blogs/2022/your-post-title/</guid>
       <description>&lt;h1 id=&#34;lorem-ipsum-project-three&#34;&gt;Lorem Ipsum Project Three&lt;/h1&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
 &lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;
@@ -227,10 +227,10 @@
     
     <item>
       <title>About</title>
-      <link>http://localhost:1313/blogs/about/about/</link>
+      <link>https://abdulohab.github.io/blogs/about/about/</link>
       <pubDate>Sat, 24 May 2025 03:19:52 +0600</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/blogs/about/about/</guid>
+      <guid>https://abdulohab.github.io/blogs/about/about/</guid>
       <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
 &lt;p&gt;This is my about page content.&lt;/p&gt;</description>
       
@@ -238,20 +238,20 @@
     
     <item>
       <title>About Me</title>
-      <link>http://localhost:1313/about-me/</link>
+      <link>https://abdulohab.github.io/about-me/</link>
       <pubDate>Sat, 25 Jan 2025 13:17:42 +0600</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/about-me/</guid>
+      <guid>https://abdulohab.github.io/about-me/</guid>
       <description>&lt;p&gt;I am &lt;strong&gt;Md. Abdul Ohab Sarker&lt;/strong&gt;, a passionate and detail-oriented Software Engineer with a strong foundation in Computer Science and Engineering. With hands-on experience in full-stack web development, DevOps, and IT management, I have led multiple Laravel-based projects from concept to deployment. I’m also actively involved in programming contests and have contributed to science education through articles published in Byapon Youth Science Magazine. I enjoy building impactful tech solutions and continuously learning new technologies.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Hugo দিয়ে কীভাবে একটি দ্রুত ও আধুনিক ব্লগ তৈরি করবেন</title>
-      <link>http://localhost:1313/blogs/2025/ideal_one/</link>
+      <link>https://abdulohab.github.io/blogs/2025/ideal_one/</link>
       <pubDate>Wed, 15 Jan 2025 10:00:00 +0600</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/blogs/2025/ideal_one/</guid>
+      <guid>https://abdulohab.github.io/blogs/2025/ideal_one/</guid>
       <description>&lt;h1 id=&#34;hugo-দয-কভব-একট-দরত-ও-আধনক-বলগ-তর-করবন&#34;&gt;Hugo দিয়ে কীভাবে একটি দ্রুত ও আধুনিক ব্লগ তৈরি করবেন&lt;/h1&gt;
 &lt;p&gt;Hugo হল একটি দ্রুত এবং আধুনিক static site generator যা Go programming language দিয়ে তৈরি। এটি ব্যবহার করে আপনি অত্যন্ত দ্রুত গতিতে একটি professional ব্লগ বা ওয়েবসাইট তৈরি করতে পারবেন।&lt;/p&gt;
 &lt;h2 id=&#34;hugo-কন-বযবহর-করবন&#34;&gt;Hugo কেন ব্যবহার করবেন?&lt;/h2&gt;
@@ -283,10 +283,10 @@
     
     <item>
       <title>সপ্তাহের শেষ</title>
-      <link>http://localhost:1313/issues/blog-8/</link>
+      <link>https://abdulohab.github.io/issues/blog-8/</link>
       <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-8/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-8/</guid>
       <description>&lt;p&gt;এই সপ্তাহটা অনেক ব্যস্ত ছিল, কিন্তু সফলও। আগামী সপ্তাহে আরও ভালো কিছু করার পরিকল্পনা আছে।&lt;/p&gt;</description>
       
       
@@ -305,10 +305,10 @@
     
     <item>
       <title>পড়াশোনার দিন</title>
-      <link>http://localhost:1313/issues/blog-7/</link>
+      <link>https://abdulohab.github.io/issues/blog-7/</link>
       <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-7/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-7/</guid>
       <description>&lt;p&gt;আজ ছিল পড়াশোনার একটি ব্যস্ত দিন। অনেক পড়তে হয়েছে, কিন্তু জ্ঞান বাড়ছে। এটি অনেক গুরুত্বপূর্ণ।&lt;/p&gt;</description>
       
       
@@ -327,10 +327,10 @@
     
     <item>
       <title>পরিবারের সাথে দিনটা কাটানো</title>
-      <link>http://localhost:1313/issues/blog-6/</link>
+      <link>https://abdulohab.github.io/issues/blog-6/</link>
       <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-6/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-6/</guid>
       <description>&lt;p&gt;আজ পরিবারের সাথে সময় কাটানোর দিন। আমরা একসাথে খেলেছি, কথা বলেছি, আর ভালোই কাটিয়েছি।&lt;/p&gt;</description>
       
       
@@ -349,10 +349,10 @@
     
     <item>
       <title>একটি নতুন শুরু</title>
-      <link>http://localhost:1313/issues/blog-5/</link>
+      <link>https://abdulohab.github.io/issues/blog-5/</link>
       <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-5/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-5/</guid>
       <description>&lt;p&gt;আজ আমি একটি নতুন প্রজেক্ট শুরু করেছি। আশা করি এটি সফল হবে। নতুন কিছু শেখার সুযোগ পেলাম।&lt;/p&gt;</description>
       
       
@@ -371,10 +371,10 @@
     
     <item>
       <title>বন্ধুদের সাথে কাটানো সময়</title>
-      <link>http://localhost:1313/issues/blog-4/</link>
+      <link>https://abdulohab.github.io/issues/blog-4/</link>
       <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-4/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-4/</guid>
       <description>&lt;p&gt;আজ বন্ধুদের সাথে দেখা করেছি। আমরা একসাথে খেয়েছি আর কথা বলেছি। এই সময়গুলো খুব মূল্যবান।&lt;/p&gt;</description>
       
       
@@ -393,10 +393,10 @@
     
     <item>
       <title>শিখছি নতুন কিছু</title>
-      <link>http://localhost:1313/issues/blog-3/</link>
+      <link>https://abdulohab.github.io/issues/blog-3/</link>
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-3/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-3/</guid>
       <description>&lt;p&gt;আজ আমি একটি নতুন প্রোগ্রামিং ল্যাঙ্গুয়েজ শিখতে শুরু করেছি। এটি কিছুটা কঠিন কিন্তু আগ্রহজনক।&lt;/p&gt;</description>
       
       
@@ -415,10 +415,10 @@
     
     <item>
       <title>দিন দুয়েকের অভিজ্ঞতা</title>
-      <link>http://localhost:1313/issues/blog-2/</link>
+      <link>https://abdulohab.github.io/issues/blog-2/</link>
       <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-2/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-2/</guid>
       <description>&lt;p&gt;গত কয়েক দিনের অভিজ্ঞতা নিয়ে আজ কিছু কথা। প্রতিদিন কিছু না কিছু শিখতে পারছি।&lt;/p&gt;</description>
       
       

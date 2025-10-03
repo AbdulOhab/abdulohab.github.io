@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>জীবনী on Abdul Wahab</title>
-    <link>http://localhost:1313/tags/%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8%E0%A7%80/</link>
+    <link>https://abdulohab.github.io/tags/%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8%E0%A7%80/</link>
     <description>Recent content in জীবনী on Abdul Wahab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>bn-bd</language>
@@ -10,14 +10,14 @@
     <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
     <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
     <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8%E0%A7%80/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://abdulohab.github.io/tags/%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8%E0%A7%80/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>প্রথম ডায়রি পোস্ট</title>
-      <link>http://localhost:1313/issues/blog-1/</link>
+      <link>https://abdulohab.github.io/issues/blog-1/</link>
       <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>http://localhost:1313/issues/blog-1/</guid>
+      <guid>https://abdulohab.github.io/issues/blog-1/</guid>
       <description>&lt;p&gt;আজ আমার প্রথম ডায়রি পোস্ট। এটি একটি শুরুর পোস্ট। আশা করি আমি নিয়মিত লিখব।&lt;/p&gt;</description>
       
       
