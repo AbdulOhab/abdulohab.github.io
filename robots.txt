@@ -1,3 +1,1 @@
 User-agent: *
-Disallow:
-Sitemap: https://abdulohab.github.io/sitemap.xml

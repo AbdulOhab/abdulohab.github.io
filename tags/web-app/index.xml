@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web-App on Abdul Wahab</title>
+    <link>http://localhost:1313/tags/web-app/</link>
+    <description>Recent content in Web-App on Abdul Wahab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>bn-bd</language>
+    <managingEditor>abdulohab059@gmail.com (Abdul Wahab)</managingEditor>
+    <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
+    <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web-app/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Lorem Ipsum Project Two</title>
+      <link>http://localhost:1313/projects/project-2/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>http://localhost:1313/projects/project-2/</guid>
+      <description>&lt;h1 id=&#34;lorem-ipsum-project-two&#34;&gt;Lorem Ipsum Project Two&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. This project demonstrates the implementation of a modern web application with various interactive features and responsive design elements. The lorem ipsum content provides realistic text for layout testing and demonstration purposes.&lt;/p&gt;</description>
+      
+      
+      <category>web-app</category>
+      
+      <category>javascript</category>
+      
+      <category>demo</category>
+      
+      
+    </item>
+    
+  </channel>
+</rss>

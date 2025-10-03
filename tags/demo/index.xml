@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Demo on Abdul Wahab</title>
+    <link>http://localhost:1313/tags/demo/</link>
+    <description>Recent content in Demo on Abdul Wahab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>bn-bd</language>
+    <managingEditor>abdulohab059@gmail.com (Abdul Wahab)</managingEditor>
+    <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
+    <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 19 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/demo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Lorem Ipsum Project One</title>
+      <link>http://localhost:1313/projects/project-1/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>http://localhost:1313/projects/project-1/</guid>
+      <description>&lt;h1 id=&#34;lorem-ipsum-project-one&#34;&gt;Lorem Ipsum Project One&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+&lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;
+&lt;p&gt;This project showcases various aspects of modern web development including responsive design, interactive elements, and clean code architecture. The lorem ipsum content serves as placeholder text to demonstrate the visual layout and typography of the project.&lt;/p&gt;</description>
+      
+      
+      <category>web-development</category>
+      
+      <category>frontend</category>
+      
+      <category>demo</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>Lorem Ipsum Project Two</title>
+      <link>http://localhost:1313/projects/project-2/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>http://localhost:1313/projects/project-2/</guid>
+      <description>&lt;h1 id=&#34;lorem-ipsum-project-two&#34;&gt;Lorem Ipsum Project Two&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. This project demonstrates the implementation of a modern web application with various interactive features and responsive design elements. The lorem ipsum content provides realistic text for layout testing and demonstration purposes.&lt;/p&gt;</description>
+      
+      
+      <category>web-app</category>
+      
+      <category>javascript</category>
+      
+      <category>demo</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>Lorem Ipsum Project Three</title>
+      <link>http://localhost:1313/projects/project-3/</link>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>http://localhost:1313/projects/project-3/</guid>
+      <description>&lt;h1 id=&#34;lorem-ipsum-project-three&#34;&gt;Lorem Ipsum Project Three&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
+&lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. This e-commerce platform demonstrates modern full-stack development practices with comprehensive features for online shopping experiences. The lorem ipsum content provides realistic product descriptions and user interface text for demonstration purposes.&lt;/p&gt;</description>
+      
+      
+      <category>ecommerce</category>
+      
+      <category>full-stack</category>
+      
+      <category>demo</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>Lorem Ipsum Project Four</title>
+      <link>http://localhost:1313/projects/project-4/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>http://localhost:1313/projects/project-4/</guid>
+      <description>&lt;h1 id=&#34;lorem-ipsum-project-four&#34;&gt;Lorem Ipsum Project Four&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
+&lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. This social media analytics dashboard provides comprehensive insights into social media performance, user engagement, and content effectiveness. The lorem ipsum content serves as realistic placeholder data for demonstrating dashboard functionality and data visualization capabilities.&lt;/p&gt;</description>
+      
+      
+      <category>analytics</category>
+      
+      <category>dashboard</category>
+      
+      <category>social-media</category>
+      
+      <category>demo</category>
+      
+      
+    </item>
+    
+    <item>
+      <title>Lorem Ipsum Project Five</title>
+      <link>http://localhost:1313/projects/project-5/</link>
+      <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>http://localhost:1313/projects/project-5/</guid>
+      <description>&lt;h1 id=&#34;lorem-ipsum-project-five&#34;&gt;Lorem Ipsum Project Five&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
+&lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. This machine learning-powered content management system revolutionizes digital content creation and management through AI-driven automation and intelligent features. The lorem ipsum content serves as realistic placeholder text for training AI models and demonstrating system capabilities.&lt;/p&gt;</description>
+      
+      
+      <category>machine-learning</category>
+      
+      <category>cms</category>
+      
+      <category>ai</category>
+      
+      <category>automation</category>
+      
+      <category>demo</category>
+      
+      
+    </item>
+    
+  </channel>
+</rss>

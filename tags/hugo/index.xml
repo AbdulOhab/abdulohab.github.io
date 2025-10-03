@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Abdul Wahab</title>
-    <link>https://abdulohab.github.io/tags/hugo/</link>
+    <link>http://localhost:1313/tags/hugo/</link>
     <description>Recent content in Hugo on Abdul Wahab</description>
-    <image>
-      <title>Abdul Wahab</title>
-      <url>https://abdulohab.github.io/images/abdul-wahab.jpg</url>
-      <link>https://abdulohab.github.io/images/abdul-wahab.jpg</link>
-    </image>
-    <generator>Hugo -- 0.147.5</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>bn-bd</language>
-    <lastBuildDate>Sun, 25 May 2025 10:30:00 +0600</lastBuildDate>
-    <atom:link href="https://abdulohab.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hugo দিয়ে কীভাবে একটি দ্রুত ও আধুনিক ব্লগ তৈরি করবেন</title>
-      <link>https://abdulohab.github.io/blogs/2025/hugo-blog-tutorial-bangla/</link>
-      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
-      <guid>https://abdulohab.github.io/blogs/2025/hugo-blog-tutorial-bangla/</guid>
-      <description>Hugo static site generator ব্যবহার করে কীভাবে একটি দ্রুত, নিরাপদ এবং আধুনিক ব্লগ তৈরি করবেন - সম্পূর্ণ বাংলা গাইড</description>
-    </item>
-    <item>
-      <title>Hugo দিয়ে কীভাবে একটি দ্রুত ও আধুনিক ব্লগ তৈরি করবেন</title>
-      <link>https://abdulohab.github.io/blogs/2025/-papermod_bangla/</link>
-      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
-      <guid>https://abdulohab.github.io/blogs/2025/-papermod_bangla/</guid>
-      <description>Hugo static site generator ব্যবহার করে কীভাবে একটি দ্রুত, নিরাপদ এবং আধুনিক ব্লগ তৈরি করবেন - সম্পূর্ণ বাংলা গাইড</description>
-    </item>
+    <managingEditor>abdulohab059@gmail.com (Abdul Wahab)</managingEditor>
+    <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
+    <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 24 May 2025 21:43:31 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Welcome to Hugo</title>
-      <link>https://abdulohab.github.io/blogs/2023/your-post-title/</link>
+      <link>http://localhost:1313/blogs/2023/your-post-title/</link>
       <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
-      <guid>https://abdulohab.github.io/blogs/2023/your-post-title/</guid>
-      <description>Learn the basics of Hugo static site generator and how to create your first website.</description>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>http://localhost:1313/blogs/2023/your-post-title/</guid>
+      <description>&lt;h1 id=&#34;welcome-to-hugo&#34;&gt;Welcome to Hugo!&lt;/h1&gt;
+&lt;p&gt;Hugo is a fast and flexible static site generator that makes building websites easy and enjoyable. In this article, we&amp;rsquo;ll explore the basics of getting started with Hugo.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-hugo&#34;&gt;What is Hugo?&lt;/h2&gt;
+&lt;p&gt;Hugo is an open-source static site generator written in Go. It&amp;rsquo;s designed to be fast, secure, and easy to use. Unlike traditional content management systems, Hugo generates static HTML files that can be served from any web server.&lt;/p&gt;</description>
+      
+      
+      <category>hugo</category>
+      
+      <category>web-development</category>
+      
+      <category>static-sites</category>
+      
+      
     </item>
+    
   </channel>
 </rss>
