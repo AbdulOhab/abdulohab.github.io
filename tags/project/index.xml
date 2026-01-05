@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on Abdul Wahab</title>
+    <link>https://abdulohab.github.io/tags/project/</link>
+    <description>Recent content in Project on Abdul Wahab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>bn-bd</language>
+    <managingEditor>abdulohab059@gmail.com (Abdul Wahab)</managingEditor>
+    <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
+    <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://abdulohab.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Byapon - Bengali Youth Science Magazine Platform</title>
+      <link>https://abdulohab.github.io/projects/project-byapon/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>https://abdulohab.github.io/projects/project-byapon/</guid>
+      <description>Byapon is one of Bangladesh&amp;rsquo;s most beloved youth science magazines, and I had the incredible honor of developing their digital platform. This project wasn&amp;rsquo;t just a development task for me — it was a passion project. Being able to contribute to a platform that nurtures young scientific minds in Bangladesh felt deeply meaningful. I learned so much while building this project, and it&amp;rsquo;s an experience I will carry with me for the rest of my life.</description>
+      
+      
+      <category>project</category>
+      
+      <category>Laravel</category>
+      
+      <category>Livewire</category>
+      
+      <category>TailwindCSS</category>
+      
+      <category>MySQL</category>
+      
+      <category>Byapon</category>
+      
+      
+    </item>
+    
+  </channel>
+</rss>

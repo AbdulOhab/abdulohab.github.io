@@ -9,418 +9,91 @@
     <managingEditor>abdulohab059@gmail.com (Abdul Wahab)</managingEditor>
     <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
     <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 12 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://abdulohab.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Lorem Ipsum Project One</title>
-      <link>https://abdulohab.github.io/projects/project-1/</link>
-      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <title>Byapon - Bengali Youth Science Magazine Platform</title>
+      <link>https://abdulohab.github.io/projects/project-byapon/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/projects/project-1/</guid>
-      <description>Whether you’re new to extension development, polishing up or porting an existing extension or theme, or creating a custom enterprise solution, we’ve got the resources to support you.</description>
+      <guid>https://abdulohab.github.io/projects/project-byapon/</guid>
+      <description>Byapon is one of Bangladesh&amp;rsquo;s most beloved youth science magazines, and I had the incredible honor of developing their digital platform. This project wasn&amp;rsquo;t just a development task for me — it was a passion project. Being able to contribute to a platform that nurtures young scientific minds in Bangladesh felt deeply meaningful. I learned so much while building this project, and it&amp;rsquo;s an experience I will carry with me for the rest of my life.</description>
       
       
-      <category>web-development</category>
+      <category>project</category>
       
-      <category>frontend</category>
+      <category>Laravel</category>
       
-      <category>demo</category>
+      <category>Livewire</category>
       
+      <category>TailwindCSS</category>
       
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum Project Two</title>
-      <link>https://abdulohab.github.io/projects/project-2/</link>
-      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/projects/project-2/</guid>
-      <description>A comprehensive project demonstrating modern web development practices. Key highlights include&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;</description>
+      <category>MySQL</category>
       
+      <category>Byapon</category>
       
-      <category>web-app</category>
-      
-      <category>javascript</category>
-      
-      <category>demo</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum Project Three</title>
-      <link>https://abdulohab.github.io/projects/project-3/</link>
-      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/projects/project-3/</guid>
-      <description>Brief introduction paragraph. Main highlights:</description>
-      
-      
-      <category>ecommerce</category>
-      
-      <category>full-stack</category>
-      
-      <category>demo</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum Project Four</title>
-      <link>https://abdulohab.github.io/projects/project-4/</link>
-      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/projects/project-4/</guid>
-      <description>&lt;h1 id=&#34;lorem-ipsum-project-four&#34;&gt;Lorem Ipsum Project Four&lt;/h1&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
-&lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. This social media analytics dashboard provides comprehensive insights into social media performance, user engagement, and content effectiveness. The lorem ipsum content serves as realistic placeholder data for demonstrating dashboard functionality and data visualization capabilities.&lt;/p&gt;</description>
-      
-      
-      <category>analytics</category>
-      
-      <category>dashboard</category>
-      
-      <category>social-media</category>
-      
-      <category>demo</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum Project Five</title>
-      <link>https://abdulohab.github.io/projects/project-5/</link>
-      <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/projects/project-5/</guid>
-      <description>&lt;h1 id=&#34;lorem-ipsum-project-five&#34;&gt;Lorem Ipsum Project Five&lt;/h1&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
-&lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. This machine learning-powered content management system revolutionizes digital content creation and management through AI-driven automation and intelligent features. The lorem ipsum content serves as realistic placeholder text for training AI models and demonstrating system capabilities.&lt;/p&gt;</description>
-      
-      
-      <category>machine-learning</category>
-      
-      <category>cms</category>
-      
-      <category>ai</category>
-      
-      <category>automation</category>
-      
-      <category>demo</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>Md. Abdul Ohab Sarker - Software Engineer</title>
-      <link>https://abdulohab.github.io/portfolio/</link>
-      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/portfolio/</guid>
-      <description>Software Engineer with a strong academic foundation in core computer science areas, including software engineering, system optimization, databases, and computer networks. Experienced in IT operations, system management, and web development through professional roles. Adept at combining theoretical knowledge with hands-on project execution to deliver innovative and practical solutions, effectively bridging the gap between academia and industry.</description>
-      
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo PaperMod: A Complete Guide to Building Beautiful Static Sites</title>
-      <link>https://abdulohab.github.io/blogs/2025/papermod_theme_learn-copy/</link>
-      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/blogs/2025/papermod_theme_learn-copy/</guid>
-      <description>&lt;!-- # Getting Started with Hugo PaperMod: A Complete Guide to Building Beautiful Static Sites --&gt;
-&lt;p&gt;Hugo has revolutionized the way we build static websites, and when paired with the right theme, it becomes an incredibly powerful tool for developers and content creators alike. One theme that stands out in the Hugo ecosystem is &lt;strong&gt;PaperMod&lt;/strong&gt; - a fast, clean, and highly customizable theme that&amp;rsquo;s perfect for blogs, portfolios, and documentation sites.&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>সপ্তাহ</category>
-      
-      <category>সফলতা</category>
-      
-      <category>পরিকল্পনা</category>
-      
-      <category>ভবিষ্যৎ</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>Palantir: A Deep Dive into the Data Integration Powerhouse</title>
-      <link>https://abdulohab.github.io/ai/</link>
-      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/ai/</guid>
-      <description>&lt;h1 id=&#34;palantir-a-deep-dive-into-the-data-integration-powerhouse&#34;&gt;Palantir: A Deep Dive into the Data Integration Powerhouse&lt;/h1&gt;
-&lt;p&gt;In an era dominated by data, the ability to effectively integrate, analyze, and act upon vast and disparate information streams has become a critical differentiator for organizations. Among the companies that have carved a significant niche in this complex domain, Palantir Technologies stands out as a name both synonymous with powerful data fusion platforms and shrouded in a degree of mystique. This article delves into what Palantir is, its core technologies, key applications, and the controversies that often accompany its operations.&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>সপ্তাহ</category>
-      
-      <category>সফলতা</category>
-      
-      <category>পরিকল্পনা</category>
-      
-      <category>ভবিষ্যৎ</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>Welcome to Hugo</title>
-      <link>https://abdulohab.github.io/blogs/2023/your-post-title/</link>
-      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/blogs/2023/your-post-title/</guid>
-      <description>&lt;h1 id=&#34;welcome-to-hugo&#34;&gt;Welcome to Hugo!&lt;/h1&gt;
-&lt;p&gt;Hugo is a fast and flexible static site generator that makes building websites easy and enjoyable. In this article, we&amp;rsquo;ll explore the basics of getting started with Hugo.&lt;/p&gt;
-&lt;h2 id=&#34;what-is-hugo&#34;&gt;What is Hugo?&lt;/h2&gt;
-&lt;p&gt;Hugo is an open-source static site generator written in Go. It&amp;rsquo;s designed to be fast, secure, and easy to use. Unlike traditional content management systems, Hugo generates static HTML files that can be served from any web server.&lt;/p&gt;</description>
-      
-      
-      <category>hugo</category>
-      
-      <category>web-development</category>
-      
-      <category>static-sites</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>Your Post Title</title>
-      <link>https://abdulohab.github.io/blogs/2022/your-post-title/</link>
-      <pubDate>Sat, 24 May 2025 21:43:31 +0600</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/blogs/2022/your-post-title/</guid>
-      <description>&lt;h1 id=&#34;lorem-ipsum-project-three&#34;&gt;Lorem Ipsum Project Three&lt;/h1&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
-&lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. This e-commerce platform demonstrates modern full-stack development practices with comprehensive features for online shopping experiences. The lorem ipsum content provides realistic product descriptions and user interface text for demonstration purposes.&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>সপ্তাহ</category>
-      
-      <category>সফলতা</category>
-      
-      <category>পরিকল্পনা</category>
-      
-      <category>ভবিষ্যৎ</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://abdulohab.github.io/blogs/about/about/</link>
-      <pubDate>Sat, 24 May 2025 03:19:52 +0600</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/blogs/about/about/</guid>
-      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
-&lt;p&gt;This is my about page content.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>About Me</title>
       <link>https://abdulohab.github.io/about-me/</link>
-      <pubDate>Sat, 25 Jan 2025 13:17:42 +0600</pubDate>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
       <guid>https://abdulohab.github.io/about-me/</guid>
-      <description>&lt;p&gt;I am &lt;strong&gt;Md. Abdul Ohab Sarker&lt;/strong&gt;, a passionate and detail-oriented Software Engineer with a strong foundation in Computer Science and Engineering. With hands-on experience in full-stack web development, DevOps, and IT management, I have led multiple Laravel-based projects from concept to deployment. I’m also actively involved in programming contests and have contributed to science education through articles published in Byapon Youth Science Magazine. I enjoy building impactful tech solutions and continuously learning new technologies.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I am &lt;strong&gt;Md. Abdul Ohab Sarker&lt;/strong&gt;, a Software Engineer with a background in Computer Science and Engineering, specializing in Laravel-based full-stack web development. I have hands-on experience delivering production-ready applications, handling deployment workflows, and managing server environments. Beyond development, I actively participate in programming contests and contribute to science education through articles published in Byapon Youth Science Magazine. I focus on building reliable, scalable solutions while continuously refining my technical expertise.&lt;/p&gt;</description>
       
     </item>
     
     <item>
-      <title>Hugo দিয়ে কীভাবে একটি দ্রুত ও আধুনিক ব্লগ তৈরি করবেন</title>
-      <link>https://abdulohab.github.io/blogs/2025/ideal_one/</link>
-      <pubDate>Wed, 15 Jan 2025 10:00:00 +0600</pubDate>
+      <title>Welcome Landing</title>
+      <link>https://abdulohab.github.io/landing/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/blogs/2025/ideal_one/</guid>
-      <description>&lt;h1 id=&#34;hugo-দয-কভব-একট-দরত-ও-আধনক-বলগ-তর-করবন&#34;&gt;Hugo দিয়ে কীভাবে একটি দ্রুত ও আধুনিক ব্লগ তৈরি করবেন&lt;/h1&gt;
-&lt;p&gt;Hugo হল একটি দ্রুত এবং আধুনিক static site generator যা Go programming language দিয়ে তৈরি। এটি ব্যবহার করে আপনি অত্যন্ত দ্রুত গতিতে একটি professional ব্লগ বা ওয়েবসাইট তৈরি করতে পারবেন।&lt;/p&gt;
-&lt;h2 id=&#34;hugo-কন-বযবহর-করবন&#34;&gt;Hugo কেন ব্যবহার করবেন?&lt;/h2&gt;
-&lt;h3 id=&#34;১-অসধরণ-গত&#34;&gt;১. অসাধারণ গতি&lt;/h3&gt;
-&lt;p&gt;Hugo সবচেয়ে দ্রুত static site generator গুলোর মধ্যে একটি। হাজার হাজার পেজ মাত্র কয়েক সেকেন্ডে generate করতে পারে।&lt;/p&gt;
-&lt;h3 id=&#34;২-সহজ-বযবহর&#34;&gt;২. সহজ ব্যবহার&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;কোন database প্রয়োজন নেই&lt;/li&gt;
-&lt;li&gt;Markdown দিয়ে content লেখা যায়&lt;/li&gt;
-&lt;li&gt;Live reload support&lt;/li&gt;
-&lt;li&gt;সহজ configuration&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;৩-নরপতত&#34;&gt;৩. নিরাপত্তা&lt;/h3&gt;
-&lt;p&gt;Static site হওয়ায় security vulnerability অনেক কম। কোন server-side code execution নেই।&lt;/p&gt;</description>
+      <guid>https://abdulohab.github.io/landing/</guid>
+      <description>&lt;!-- This page will use the special layout without header/footer --&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Summernote Integration with Laravel Blade</title>
+      <link>https://abdulohab.github.io/blogs/2024/blade-summernote-setup/</link>
+      <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>https://abdulohab.github.io/blogs/2024/blade-summernote-setup/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Summernote&lt;/strong&gt; is a &lt;strong&gt;powerful, free, and lightweight&lt;/strong&gt; WYSIWYG editor that works exceptionally well for rich text editing in modern web applications. It is especially popular in &lt;strong&gt;Laravel-based projects&lt;/strong&gt; due to its simplicity, flexibility, and ease of integration.&lt;/p&gt;
+&lt;p&gt;However, integrating Summernote into a &lt;strong&gt;Laravel Blade boilerplate&lt;/strong&gt; can become a bit challenging—particularly when you want to set it up &lt;strong&gt;without relying on a CDN&lt;/strong&gt;. In a local or production-grade setup, you need to manually manage all required &lt;strong&gt;CSS and JavaScript dependencies&lt;/strong&gt;, which adds extra configuration overhead. Since Summernote is tightly coupled with &lt;strong&gt;Bootstrap&lt;/strong&gt;, ensuring proper loading order and compatibility becomes crucial.&lt;/p&gt;</description>
       
       
-      <category>ডায়রি</category>
+      <category>laravel</category>
       
-      <category>সপ্তাহ</category>
+      <category>blade</category>
       
-      <category>সফলতা</category>
+      <category>wysiwyg</category>
       
-      <category>পরিকল্পনা</category>
-      
-      <category>ভবিষ্যৎ</category>
+      <category>rich text editor</category>
       
       
     </item>
     
     <item>
-      <title>সপ্তাহের শেষ</title>
-      <link>https://abdulohab.github.io/issues/blog-8/</link>
-      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <title>Archives</title>
+      <link>https://abdulohab.github.io/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/issues/blog-8/</guid>
-      <description>&lt;p&gt;এই সপ্তাহটা অনেক ব্যস্ত ছিল, কিন্তু সফলও। আগামী সপ্তাহে আরও ভালো কিছু করার পরিকল্পনা আছে।&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>সপ্তাহ</category>
-      
-      <category>সফলতা</category>
-      
-      <category>পরিকল্পনা</category>
-      
-      <category>ভবিষ্যৎ</category>
-      
+      <guid>https://abdulohab.github.io/archives/</guid>
+      <description>archives</description>
       
     </item>
     
     <item>
-      <title>পড়াশোনার দিন</title>
-      <link>https://abdulohab.github.io/issues/blog-7/</link>
-      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
+      <title>Search</title>
+      <link>https://abdulohab.github.io/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/issues/blog-7/</guid>
-      <description>&lt;p&gt;আজ ছিল পড়াশোনার একটি ব্যস্ত দিন। অনেক পড়তে হয়েছে, কিন্তু জ্ঞান বাড়ছে। এটি অনেক গুরুত্বপূর্ণ।&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>পড়াশোনা</category>
-      
-      <category>শিক্ষা</category>
-      
-      <category>জ্ঞান</category>
-      
-      <category>ব্যস্ত</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>পরিবারের সাথে দিনটা কাটানো</title>
-      <link>https://abdulohab.github.io/issues/blog-6/</link>
-      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/issues/blog-6/</guid>
-      <description>&lt;p&gt;আজ পরিবারের সাথে সময় কাটানোর দিন। আমরা একসাথে খেলেছি, কথা বলেছি, আর ভালোই কাটিয়েছি।&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>পরিবার</category>
-      
-      <category>পারিবারিক</category>
-      
-      <category>জীবন</category>
-      
-      <category>সময়</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>একটি নতুন শুরু</title>
-      <link>https://abdulohab.github.io/issues/blog-5/</link>
-      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/issues/blog-5/</guid>
-      <description>&lt;p&gt;আজ আমি একটি নতুন প্রজেক্ট শুরু করেছি। আশা করি এটি সফল হবে। নতুন কিছু শেখার সুযোগ পেলাম।&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>প্রজেক্ট</category>
-      
-      <category>শুরু</category>
-      
-      <category>টেক</category>
-      
-      <category>উদ্যোক্তা</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>বন্ধুদের সাথে কাটানো সময়</title>
-      <link>https://abdulohab.github.io/issues/blog-4/</link>
-      <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/issues/blog-4/</guid>
-      <description>&lt;p&gt;আজ বন্ধুদের সাথে দেখা করেছি। আমরা একসাথে খেয়েছি আর কথা বলেছি। এই সময়গুলো খুব মূল্যবান।&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>বন্ধু</category>
-      
-      <category>সামাজিক</category>
-      
-      <category>জীবন</category>
-      
-      <category>সময়</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>শিখছি নতুন কিছু</title>
-      <link>https://abdulohab.github.io/issues/blog-3/</link>
-      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/issues/blog-3/</guid>
-      <description>&lt;p&gt;আজ আমি একটি নতুন প্রোগ্রামিং ল্যাঙ্গুয়েজ শিখতে শুরু করেছি। এটি কিছুটা কঠিন কিন্তু আগ্রহজনক।&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>প্রোগ্রামিং</category>
-      
-      <category>শিক্ষা</category>
-      
-      <category>নতুন কিছু</category>
-      
-      <category>টেক</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>দিন দুয়েকের অভিজ্ঞতা</title>
-      <link>https://abdulohab.github.io/issues/blog-2/</link>
-      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/issues/blog-2/</guid>
-      <description>&lt;p&gt;গত কয়েক দিনের অভিজ্ঞতা নিয়ে আজ কিছু কথা। প্রতিদিন কিছু না কিছু শিখতে পারছি।&lt;/p&gt;</description>
-      
-      
-      <category>ডায়রি</category>
-      
-      <category>অভিজ্ঞতা</category>
-      
-      <category>জীবন</category>
-      
-      <category>শিক্ষা</category>
-      
+      <guid>https://abdulohab.github.io/search/</guid>
+      <description>search</description>
       
     </item>
     

@@ -9,99 +9,29 @@
     <managingEditor>abdulohab059@gmail.com (Abdul Wahab)</managingEditor>
     <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
     <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://abdulohab.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>E-commerce Website</title>
-      <link>https://abdulohab.github.io/projects/ecommerce-website-part-2/</link>
-      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <title>Byapon - Bengali Youth Science Magazine Platform</title>
+      <link>https://abdulohab.github.io/projects/project-byapon/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
       <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/projects/ecommerce-website-part-2/</guid>
-      <description>&lt;h2 id=&#34;পরজকট-সমপরক&#34;&gt;প্রোজেক্ট সম্পর্কে&lt;/h2&gt;
-&lt;p&gt;এই প্রোজেক্টটি একটি সম্পূর্ণ ই-কমার্স সমাধান যেখানে রয়েছে:&lt;/p&gt;
-&lt;h3 id=&#34;মল-ফচরসমহ&#34;&gt;মূল ফিচারসমূহ&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;ইউজার রেজিস্ট্রেশন ও লগইন&lt;/li&gt;
-&lt;li&gt;প্রোডাক্ট ক্যাটালগ&lt;/li&gt;
-&lt;li&gt;শপিং কার্ট&lt;/li&gt;
-&lt;li&gt;অনলাইন পেমেন্ট (Stripe)&lt;/li&gt;
-&lt;li&gt;অর্ডার ম্যানেজমেন্ট&lt;/li&gt;
-&lt;li&gt;অ্যাডমিন প্যানেল&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;বযবহত-পরযকত&#34;&gt;ব্যবহৃত প্রযুক্তি&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Backend&lt;/strong&gt;: Laravel 10&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: Vue.js 3 + Tailwind CSS&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Database&lt;/strong&gt;: MySQL&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Payment&lt;/strong&gt;: Stripe API&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Deployment&lt;/strong&gt;: AWS/DigitalOcean&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;চযলঞজ-ও-সমধন&#34;&gt;চ্যালেঞ্জ ও সমাধান&lt;/h3&gt;
-&lt;p&gt;এই প্রোজেক্টে বিভিন্ন চ্যালেঞ্জের মুখোমুখি হয়েছি:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;পেমেন্ট সিস্টেম&lt;/strong&gt;: Stripe API integration করতে গিয়ে&amp;hellip;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;পারফর্মেন্স&lt;/strong&gt;: বড় ডেটাবেসের জন্য query optimization&amp;hellip;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;সকরনশট&#34;&gt;স্ক্রিনশট&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://abdulohab.github.io/images/projects/ecommerce-home.jpg&#34; alt=&#34;Homepage&#34;&gt;
-&lt;img src=&#34;https://abdulohab.github.io/images/projects/ecommerce-admin.jpg&#34; alt=&#34;Admin Panel&#34;&gt;&lt;/p&gt;</description>
+      <guid>https://abdulohab.github.io/projects/project-byapon/</guid>
+      <description>Byapon is one of Bangladesh&amp;rsquo;s most beloved youth science magazines, and I had the incredible honor of developing their digital platform. This project wasn&amp;rsquo;t just a development task for me — it was a passion project. Being able to contribute to a platform that nurtures young scientific minds in Bangladesh felt deeply meaningful. I learned so much while building this project, and it&amp;rsquo;s an experience I will carry with me for the rest of my life.</description>
       
+      
+      <category>project</category>
       
       <category>Laravel</category>
       
-      <category>Vue.js</category>
+      <category>Livewire</category>
+      
+      <category>TailwindCSS</category>
       
       <category>MySQL</category>
       
-      <category>E-commerce</category>
-      
-      
-    </item>
-    
-    <item>
-      <title>E-commerce Website</title>
-      <link>https://abdulohab.github.io/projects/ecommerce-website/</link>
-      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
-      <guid>https://abdulohab.github.io/projects/ecommerce-website/</guid>
-      <description>&lt;h2 id=&#34;পরজকট-সমপরক&#34;&gt;প্রোজেক্ট সম্পর্কে&lt;/h2&gt;
-&lt;p&gt;এই প্রোজেক্টটি একটি সম্পূর্ণ ই-কমার্স সমাধান যেখানে রয়েছে:&lt;/p&gt;
-&lt;h3 id=&#34;মল-ফচরসমহ&#34;&gt;মূল ফিচারসমূহ&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;ইউজার রেজিস্ট্রেশন ও লগইন&lt;/li&gt;
-&lt;li&gt;প্রোডাক্ট ক্যাটালগ&lt;/li&gt;
-&lt;li&gt;শপিং কার্ট&lt;/li&gt;
-&lt;li&gt;অনলাইন পেমেন্ট (Stripe)&lt;/li&gt;
-&lt;li&gt;অর্ডার ম্যানেজমেন্ট&lt;/li&gt;
-&lt;li&gt;অ্যাডমিন প্যানেল&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;বযবহত-পরযকত&#34;&gt;ব্যবহৃত প্রযুক্তি&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Backend&lt;/strong&gt;: Laravel 10&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: Vue.js 3 + Tailwind CSS&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Database&lt;/strong&gt;: MySQL&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Payment&lt;/strong&gt;: Stripe API&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Deployment&lt;/strong&gt;: AWS/DigitalOcean&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;চযলঞজ-ও-সমধন&#34;&gt;চ্যালেঞ্জ ও সমাধান&lt;/h3&gt;
-&lt;p&gt;এই প্রোজেক্টে বিভিন্ন চ্যালেঞ্জের মুখোমুখি হয়েছি:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;পেমেন্ট সিস্টেম&lt;/strong&gt;: Stripe API integration করতে গিয়ে&amp;hellip;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;পারফর্মেন্স&lt;/strong&gt;: বড় ডেটাবেসের জন্য query optimization&amp;hellip;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;সকরনশট&#34;&gt;স্ক্রিনশট&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://abdulohab.github.io/images/projects/ecommerce-home.jpg&#34; alt=&#34;Homepage&#34;&gt;
-&lt;img src=&#34;https://abdulohab.github.io/images/projects/ecommerce-admin.jpg&#34; alt=&#34;Admin Panel&#34;&gt;&lt;/p&gt;</description>
-      
-      
-      <category>Laravel</category>
-      
-      <category>Vue.js</category>
-      
-      <category>MySQL</category>
-      
-      <category>E-commerce</category>
+      <category>Byapon</category>
       
       
     </item>

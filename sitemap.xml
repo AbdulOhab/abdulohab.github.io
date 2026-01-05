@@ -2,233 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://abdulohab.github.io/projects/project-1/</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/projects/project-2/</loc>
-    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/projects/project-3/</loc>
-    <lastmod>2025-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/projects/project-4/</loc>
-    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/projects/project-5/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://abdulohab.github.io/</loc>
-    <lastmod>2025-09-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/portfolio/</loc>
-    <lastmod>2025-09-12T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/byapon/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/portfolio/</loc>
-    <lastmod>2025-09-12T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/projects/project-byapon/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/blogs/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/laravel/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/blogs/2025/papermod_theme_learn-copy/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/livewire/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/tags/hugo/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/mysql/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/ai/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/static-sites/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/web-development/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/blogs/2023/your-post-title/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/blogs/2022/your-post-title/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%A1%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%B0%E0%A6%BF/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AA%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%B2%E0%A7%8D%E0%A6%AA%E0%A6%A8%E0%A6%BE/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AD%E0%A6%AC%E0%A6%BF%E0%A6%B7%E0%A7%8D%E0%A6%AF%E0%A7%8E/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%B8%E0%A6%AA%E0%A7%8D%E0%A6%A4%E0%A6%BE%E0%A6%B9/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%B8%E0%A6%AB%E0%A6%B2%E0%A6%A4%E0%A6%BE/</loc>
-    <lastmod>2025-05-24T21:43:31+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/blogs/about/about/</loc>
-    <lastmod>2025-05-24T03:19:52+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/about-me/</loc>
-    <lastmod>2025-01-25T13:17:42+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/ai/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/automation/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/cms/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/demo/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/machine-learning/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/project/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://abdulohab.github.io/projects/</loc>
-    <lastmod>2025-01-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/tags/analytics/</loc>
-    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/tags/dashboard/</loc>
-    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/tailwindcss/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/tags/social-media/</loc>
-    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/ecommerce/</loc>
-    <lastmod>2025-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/full-stack/</loc>
-    <lastmod>2025-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/javascript/</loc>
-    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/web-app/</loc>
-    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/blogs/2025/ideal_one/</loc>
-    <lastmod>2025-01-15T10:00:00+06:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/frontend/</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/issues/</loc>
-    <lastmod>2025-01-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/issues/blog-8/</loc>
-    <lastmod>2025-01-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8/</loc>
-    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AA%E0%A6%A1%E0%A6%BC%E0%A6%BE%E0%A6%B6%E0%A7%8B%E0%A6%A8%E0%A6%BE/</loc>
-    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/issues/blog-7/</loc>
-    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B8%E0%A7%8D%E0%A6%A4/</loc>
-    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE/</loc>
-    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8/</loc>
-    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AA%E0%A6%B0%E0%A6%BF%E0%A6%AC%E0%A6%BE%E0%A6%B0/</loc>
-    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/issues/blog-6/</loc>
-    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AA%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%95/</loc>
-    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%B8%E0%A6%AE%E0%A6%AF%E0%A6%BC/</loc>
-    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%89%E0%A6%A6%E0%A7%8D%E0%A6%AF%E0%A7%8B%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BE/</loc>
-    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/issues/blog-5/</loc>
-    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%9F%E0%A7%87%E0%A6%95/</loc>
-    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%9C%E0%A7%87%E0%A6%95%E0%A7%8D%E0%A6%9F/</loc>
-    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%B6%E0%A7%81%E0%A6%B0%E0%A7%81/</loc>
-    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A7%E0%A7%81/</loc>
-    <lastmod>2025-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/issues/blog-4/</loc>
-    <lastmod>2025-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%B8%E0%A6%BE%E0%A6%AE%E0%A6%BE%E0%A6%9C%E0%A6%BF%E0%A6%95/</loc>
-    <lastmod>2025-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%A8%E0%A6%A4%E0%A7%81%E0%A6%A8-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%AE%E0%A6%BF%E0%A6%82/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/issues/blog-3/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%85%E0%A6%AD%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%A4%E0%A6%BE/</loc>
-    <lastmod>2025-01-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/issues/blog-2/</loc>
-    <lastmod>2025-01-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/coming-soon/</loc>
-    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/about-me/</loc>
+    <lastmod>2025-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://abdulohab.github.io/landing/</loc>
     <lastmod>2025-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8%E0%A7%80/</loc>
-    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/blade/</loc>
+    <lastmod>2024-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/issues/blog-1/</loc>
-    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/blogs/</loc>
+    <lastmod>2024-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/tags/%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BF%E0%A6%97%E0%A6%A4/</loc>
-    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/rich-text-editor/</loc>
+    <lastmod>2024-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/blogs/2025/my_html/</loc>
-    <lastmod>2024-05-25T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/blogs/2024/blade-summernote-setup/</loc>
+    <lastmod>2024-08-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://abdulohab.github.io/tags/e-commerce/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/projects/ecommerce-website-part-2/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/projects/ecommerce-website/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/laravel/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/mysql/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://abdulohab.github.io/tags/vue.js/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <loc>https://abdulohab.github.io/tags/wysiwyg/</loc>
+    <lastmod>2024-08-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://abdulohab.github.io/archives/</loc>
   </url><url>

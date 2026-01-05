@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rich Text Editor on Abdul Wahab</title>
+    <link>https://abdulohab.github.io/tags/rich-text-editor/</link>
+    <description>Recent content in Rich Text Editor on Abdul Wahab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>bn-bd</language>
+    <managingEditor>abdulohab059@gmail.com (Abdul Wahab)</managingEditor>
+    <webMaster>abdulohab059@gmail.com (Abdul Wahab)</webMaster>
+    <copyright>© 2025 Abdul Wahab. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 25 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://abdulohab.github.io/tags/rich-text-editor/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Summernote Integration with Laravel Blade</title>
+      <link>https://abdulohab.github.io/blogs/2024/blade-summernote-setup/</link>
+      <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
+      <author>abdulohab059@gmail.com (Abdul Wahab)</author>
+      <guid>https://abdulohab.github.io/blogs/2024/blade-summernote-setup/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Summernote&lt;/strong&gt; is a &lt;strong&gt;powerful, free, and lightweight&lt;/strong&gt; WYSIWYG editor that works exceptionally well for rich text editing in modern web applications. It is especially popular in &lt;strong&gt;Laravel-based projects&lt;/strong&gt; due to its simplicity, flexibility, and ease of integration.&lt;/p&gt;
+&lt;p&gt;However, integrating Summernote into a &lt;strong&gt;Laravel Blade boilerplate&lt;/strong&gt; can become a bit challenging—particularly when you want to set it up &lt;strong&gt;without relying on a CDN&lt;/strong&gt;. In a local or production-grade setup, you need to manually manage all required &lt;strong&gt;CSS and JavaScript dependencies&lt;/strong&gt;, which adds extra configuration overhead. Since Summernote is tightly coupled with &lt;strong&gt;Bootstrap&lt;/strong&gt;, ensuring proper loading order and compatibility becomes crucial.&lt;/p&gt;</description>
+      
+      
+      <category>laravel</category>
+      
+      <category>blade</category>
+      
+      <category>wysiwyg</category>
+      
+      <category>rich text editor</category>
+      
+      
+    </item>
+    
+  </channel>
+</rss>
