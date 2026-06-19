@@ -31,10 +31,14 @@
 
       <!-- Search Box (the hero element) -->
       <div class="search-box fade-in">
-        <button class="search-icon-btn" type="button" title="Search (Enter)" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        <button class="search-icon-btn" id="searchIconBtn" type="button" title="Search (Enter)" aria-label="Search">
+          <svg class="ico-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" />
+          </svg>
+          <svg class="ico-clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18" /><path d="m6 6 12 12" />
           </svg>
         </button>
         <textarea id="searchInput" class="search-box-input" rows="3"
@@ -79,13 +83,6 @@
         </button>
       </div>
 
-      <!-- Hints -->
-      <p class="hints fade-in">
-        <kbd>Enter</kbd> Google •
-        <kbd>Ctrl+Enter</kbd> all engines •
-        <kbd>Esc</kbd> clear
-      </p>
-
       <!-- AI Quick Links -->
       <p class="ai-links-title fade-in">Quick links</p>
       <p class="ai-links fade-in">
@@ -116,6 +113,7 @@
     <footer class="os-footer fade-in">
       <p>
         © 2026 OpenSearch.
+        <a href="#" id="osHelp" class="os-link">Help</a> •
         <a href="https://github.com/AbdulOhab/BrowserHomePage" target="_blank" rel="noopener"
           class="os-link">Source</a>
       </p>
