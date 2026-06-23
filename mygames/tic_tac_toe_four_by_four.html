@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tic Tac Toe — Online</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- mqtt.js over WebSocket: lets two browsers talk peer-to-peer-style via a public broker, no backend, no auth -->
+<script src="https://unpkg.com/mqtt@4.3.7/dist/mqtt.min.js"></script>
+<style>
+  /* keep the board square on any screen; scale the mark with the viewport */
+  .cell {
+    aspect-ratio: 1 / 1;
+    font-size: clamp(1.1rem, 6vw, 2rem);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .cell-clickable:hover { background-color: rgba(99, 102, 241, 0.25); }
+  .mark-pop { animation: pop 0.18s ease-out; }
+  @keyframes pop { 0% { transform: scale(0.4); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+</style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white flex items-center justify-center p-4 font-sans">
+
+  <div class="w-full max-w-md">
+    <header class="text-center mb-4 sm:mb-5">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Tic Tac Toe</h1>
+      <p class="text-slate-300 text-sm mt-1">Play with a friend from anywhere — just share a code.</p>
+    </header>
+
+    <!-- connection indicator -->
+    <div id="statusBar" class="flex items-center justify-center gap-2 text-xs mb-4">
+      <span id="connDot" class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
+      <span id="connText" class="text-slate-300">Not connected</span>
+    </div>
+
+    <!-- ============ SETUP SCREEN ============ -->
+    <section id="setupScreen" class="bg-white/5 backdrop-blur rounded-2xl p-4 sm:p-6 border border-white/10 space-y-4">
+      <button id="createBtn"
+        class="w-full bg-indigo-600 hover:bg-indigo-500 transition rounded-xl py-3 font-semibold text-lg shadow-lg shadow-indigo-900/40">
+        Create Game
+      </button>
+
+      <div class="flex items-center gap-3 text-slate-400 text-xs">
+        <span class="flex-1 h-px bg-white/10"></span> OR <span class="flex-1 h-px bg-white/10"></span>
+      </div>
+
+      <div class="flex gap-2">
+        <input id="joinInput" maxlength="5" placeholder="ROOM CODE"
+          class="flex-1 bg-white/10 border border-white/10 rounded-xl px-4 py-3 uppercase tracking-widest text-center font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-slate-500 placeholder:normal-case placeholder:tracking-normal" />
+        <button id="joinBtn"
+          class="bg-emerald-600 hover:bg-emerald-500 transition rounded-xl px-5 py-3 font-semibold">
+          Join
+        </button>
+      </div>
+      <p class="text-center text-xs text-slate-400">Ask your friend for their room code, or create a game and share yours.</p>
+    </section>
+
+    <!-- ============ GAME SCREEN ============ -->
+    <section id="gameScreen" class="hidden space-y-4">
+      <!-- room code + share -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-between">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-slate-400">Room code</p>
+          <p id="roomDisplay" class="font-mono text-xl sm:text-2xl font-bold tracking-[0.25em] sm:tracking-[0.3em]"></p>
+          <p id="roomCount" class="text-xs text-slate-400 mt-1"></p>
+        </div>
+        <div class="flex gap-2">
+          <button id="copyBtn" class="text-xs bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2">Copy</button>
+          <button id="linkBtn" class="text-xs bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2">Share link</button>
+        </div>
+      </div>
+
+      <!-- who am I + name + turn status -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-3 space-y-2">
+        <div class="flex items-center justify-between gap-3">
+          <span class="text-sm text-slate-300 shrink-0">You are: <b id="symbolDisplay" class="text-lg"></b></span>
+          <input id="nameInput" maxlength="14" placeholder="Your name (optional)"
+            class="bg-white/10 border border-white/10 rounded-lg px-3 py-1.5 text-sm w-40 focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-slate-500" />
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <span id="matchup" class="text-xs text-slate-400 truncate"></span>
+          <span id="turnStatus" class="text-sm font-semibold text-indigo-300 shrink-0"></span>
+        </div>
+      </div>
+
+      <!-- the board -->
+      <div id="board" class="grid grid-cols-4 gap-1.5 sm:gap-2"></div>
+
+      <!-- scoreboard -->
+      <div class="grid grid-cols-3 gap-2 text-center">
+        <div class="bg-white/5 border border-white/10 rounded-xl py-2 px-1">
+          <p id="labelX" class="text-[10px] uppercase tracking-widest text-sky-400 truncate">X</p>
+          <p id="scoreX" class="text-xl font-bold text-sky-400">0</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-xl py-2 px-1">
+          <p class="text-[10px] uppercase tracking-widest text-slate-400">Draws</p>
+          <p id="scoreD" class="text-xl font-bold text-slate-300">0</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-xl py-2 px-1">
+          <p id="labelO" class="text-[10px] uppercase tracking-widest text-rose-400 truncate">O</p>
+          <p id="scoreO" class="text-xl font-bold text-rose-400">0</p>
+        </div>
+      </div>
+
+      <!-- chat -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+        <div id="chatLog" class="h-32 overflow-y-auto px-3 py-2 space-y-1 flex flex-col"></div>
+        <div class="flex gap-2 border-t border-white/10 px-2 py-2">
+          <input id="chatInput" maxlength="200" placeholder="Message…"
+            class="flex-1 bg-white/10 border border-white/10 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-slate-500" />
+          <button id="chatSendBtn" class="bg-indigo-600 hover:bg-indigo-500 transition rounded-lg px-4 py-1.5 text-sm font-semibold">Send</button>
+        </div>
+      </div>
+
+      <!-- actions -->
+      <div class="flex gap-2">
+        <button id="leaveBtn" class="flex-1 bg-white/10 hover:bg-white/20 transition rounded-xl py-3 font-semibold">Leave</button>
+      </div>
+    </section>
+
+    <p class="text-center text-[11px] text-slate-500 mt-6">
+      Powered by the public HiveMQ MQTT broker over WebSocket.
+    </p>
+  </div>
+
+<script>
+/* ============================================================
+   Tic Tac Toe — realtime multiplayer over a public MQTT broker.
+   No backend, no accounts. Players share a 5-char room code.
+   Creator = X, joiner = O. All moves are broadcast on one topic.
+============================================================ */
+
+const BROKER_URL = 'wss://broker.hivemq.com:8884/mqtt';
+console.log('%c[Tic Tac Toe 4x4] build-1 loaded', 'color:#818cf8;font-weight:bold');
+const TOPIC_PREFIX = 'tictactoe-4x4-nologin/';
+const WIN_LINES = [
+  [0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15],   // rows
+  [0,4,8,12],[1,5,9,13],[2,6,10,14],[3,7,11,15],    // cols
+  [0,5,10,15],[3,6,9,12]                             // diagonals
+];
+
+// ---- state ----
+let client = null;
+let roomCode = null;
+let topic = null;
+let mySymbol = null;        // current symbol this round ('X'/'O'); null for spectator
+let opponentSymbol = null;
+let isSpectator = false;    // 3rd+ person: watches but can't move
+let isP1 = false;           // creator = player 1, joiner = player 2 (stable identity)
+let xIsP1 = true;           // does player 1 play X this round? flips after every game
+let board = Array(16).fill(null);
+let currentTurn = 'X';
+let gameActive = false;
+let restartTimer = null;    // auto-restart countdown after a game ends
+let lastMove = -1;          // index of the most-recently placed mark (for pop animation)
+let joinDeadline = null;    // joiner waits this long for a live host to answer before giving up
+let roomConfirmed = false;  // joiner: did a live host respond to our 'join' yet?
+let presence = {};          // id -> { role, seen }: who is in the room right now
+let presenceBeat = null;    // interval that re-broadcasts our presence
+let presencePrune = null;   // interval that drops members who stopped heart-beating
+let opponentHere = false;   // did the other player join?
+let wins = { p1: 0, p2: 0, draws: 0 };   // stable wins per human (never swaps)
+let playerNames = { p1: '', p2: '' };    // stable human names (never swaps)
+let names = { X: '', O: '' };            // derived: current symbol → name (for matchup/status)
+// ---- chat ----
+const MAX_CHAT = 80;   // keep last N messages in the log
+// unique id per tab so we ignore our own echoed messages
+const myId = Math.random().toString(36).slice(2, 9);
+
+// ---- DOM ----
+const $ = id => document.getElementById(id);
+const setupScreen = $('setupScreen');
+const gameScreen  = $('gameScreen');
+const boardEl     = $('board');
+
+/* ---------- utility ---------- */
+function genCode() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no confusing chars
+  let s = '';
+  for (let i = 0; i < 5; i++) s += chars[Math.floor(Math.random() * chars.length)];
+  return s;
+}
+
+function setConn(state, text) {
+  const dot = $('connDot'), txt = $('connText');
+  txt.textContent = text;
+  dot.className = 'w-2.5 h-2.5 rounded-full ' + ({
+    online: 'bg-emerald-400', connecting: 'bg-amber-400', offline: 'bg-slate-500', error: 'bg-rose-500'
+  }[state] || 'bg-slate-500');
+}
+
+/* ---------- board rendering ---------- */
+function buildBoard() {
+  boardEl.innerHTML = '';
+  for (let i = 0; i < 16; i++) {
+    const cell = document.createElement('button');
+    cell.className = 'cell rounded-xl bg-white/5 border border-white/10 font-extrabold flex items-center justify-center transition select-none';
+    cell.dataset.i = i;
+    cell.addEventListener('click', () => makeMove(i));
+    boardEl.appendChild(cell);
+  }
+  renderBoard();
+}
+
+function renderBoard() {
+  [...boardEl.children].forEach((cell, i) => {
+    const val = board[i];
+    const clickable = gameActive && currentTurn === mySymbol && !val;
+    cell.textContent = val || '';
+    cell.classList.remove('text-sky-400', 'text-rose-400', 'cell-clickable', 'mark-pop', 'bg-indigo-500/30');
+    if (val === 'X') { cell.classList.add('text-sky-400'); if (i === lastMove) cell.classList.add('mark-pop'); }
+    if (val === 'O') { cell.classList.add('text-rose-400'); if (i === lastMove) cell.classList.add('mark-pop'); }
+    if (clickable) cell.classList.add('cell-clickable');
+  });
+}
+
+function highlightLine(line) {
+  if (!line) return;
+  for (const i of line) boardEl.children[i].classList.add('bg-indigo-500/30');
+}
+
+function clearHighlight() { /* re-render clears classes anyway */ }
+
+/* ---------- status text ---------- */
+const shortLabel = sym => names[sym] || sym;            // "Alice" or "X"
+const fullLabel  = sym => (names[sym] ? names[sym] + ' (' + sym + ')' : sym); // "Alice (X)" or "X"
+
+function renderMatchup() {
+  $('matchup').textContent = fullLabel('X') + '   vs   ' + fullLabel('O');
+}
+
+function updateStatus(result) {
+  const el = $('turnStatus');
+  if (isSpectator) {
+    if (result) {
+      el.textContent = result.winner === 'draw' ? 'Draw — spectating'
+                                            : shortLabel(result.winner) + ' wins — spectating';
+    } else if (gameActive) {
+      el.textContent = 'Spectating — ' + shortLabel(currentTurn) + ' to move';
+    } else {
+      el.textContent = 'Spectating — waiting';
+    }
+    el.className = 'text-sm font-semibold text-slate-300';
+    return;
+  }
+  if (result) {
+    if (result.winner === 'draw') el.textContent = "It's a draw!";
+    else if (result.winner === mySymbol) el.textContent = 'You win!';
+    else el.textContent = shortLabel(result.winner) + ' wins';
+    el.className = 'text-sm font-semibold text-amber-300';
+    return;
+  }
+  if (!opponentHere) {
+    el.textContent = 'Waiting for opponent…';
+    el.className = 'text-sm font-semibold text-amber-300';
+    return;
+  }
+  if (currentTurn === mySymbol) {
+    el.textContent = 'Your turn';
+    el.className = 'text-sm font-semibold text-emerald-300';
+  } else {
+    el.textContent = shortLabel(opponentSymbol) + "'s turn";
+    el.className = 'text-sm font-semibold text-indigo-300';
+  }
+}
+
+function renderScores() {
+  const p1Color = xIsP1 ? 'text-sky-400' : 'text-rose-400';
+  const p2Color = xIsP1 ? 'text-rose-400' : 'text-sky-400';
+  $('scoreX').textContent = wins.p1;
+  $('scoreO').textContent = wins.p2;
+  $('scoreD').textContent = wins.draws;
+  $('labelX').textContent = playerNames.p1 || 'Player 1';
+  $('labelO').textContent = playerNames.p2 || 'Player 2';
+  $('labelX').className = `text-[10px] uppercase tracking-widest truncate ${p1Color}`;
+  $('scoreX').className = `text-xl font-bold ${p1Color}`;
+  $('labelO').className = `text-[10px] uppercase tracking-widest truncate ${p2Color}`;
+  $('scoreO').className = `text-xl font-bold ${p2Color}`;
+}
+
+const opposite = s => (s === 'X' ? 'O' : 'X');
+const myKey    = () => (isP1 ? 'p1' : 'p2');   // this client's stable player id
+
+// recompute the current symbol assignment + derived display names from stable identity
+function applyRound() {
+  if (!isSpectator) {
+    mySymbol = isP1 ? (xIsP1 ? 'X' : 'O') : (xIsP1 ? 'O' : 'X');
+    opponentSymbol = opposite(mySymbol);
+  }
+  names = xIsP1 ? { X: playerNames.p1, O: playerNames.p2 }
+               : { X: playerNames.p2, O: playerNames.p1 };
+}
+
+// after every game the X/O sign rotates to the other player
+function flipRound() {
+  xIsP1 = !xIsP1;
+  applyRound();
+}
+
+function refreshIdentity() {
+  if (!isSpectator && mySymbol) {
+    $('symbolDisplay').textContent = mySymbol;
+    $('symbolDisplay').className = mySymbol === 'X' ? 'text-lg text-sky-400' : 'text-lg text-rose-400';
+  }
+  renderMatchup();
+}
+
+/* ---------- room presence (live headcount) ---------- */
+const myRole = () => (isSpectator ? 'spec' : myKey());
+
+function renderRoomCount() {
+  const list = Object.values(presence);
+  const players  = list.filter(p => p.role !== 'spec').length;   // p1 + p2
+  const watchers = list.filter(p => p.role === 'spec').length;   // spectators
+  const total = players + watchers;
+  const el = $('roomCount');
+  if (!el) return;
+  el.textContent = watchers > 0
+    ? total + ' in room · ' + watchers + ' watching'
+    : total + ' in room';
+}
+
+// broadcast our presence and keep our own entry fresh
+function sendHere() {
+  if (!client) return;
+  presence[myId] = { role: myRole(), seen: Date.now() };
+  send({ t: 'here', role: myRole() });
+  renderRoomCount();
+}
+
+// drop anyone whose heartbeat we haven't heard in a while (they left / closed the tab)
+function prunePresence() {
+  const cutoff = Date.now() - 9000;
+  let changed = false;
+  const oppRole = isSpectator ? null : (isP1 ? 'p2' : 'p1');
+  for (const id in presence) {
+    if (presence[id].seen < cutoff) {
+      if (oppRole && presence[id].role === oppRole) handleOpponentLeft();
+      delete presence[id];
+      changed = true;
+    }
+  }
+  if (changed) renderRoomCount();
+}
+
+/* ---------- chat ---------- */
+function appendChat(text, mine) {
+  const log = $('chatLog');
+  if (!log) return;
+  const row = document.createElement('div');
+  row.className = mine
+    ? 'self-end max-w-[80%] bg-indigo-600/70 rounded-xl rounded-br-sm px-2.5 py-1 text-sm break-words'
+    : 'self-start max-w-[80%] bg-white/10 rounded-xl rounded-bl-sm px-2.5 py-1 text-sm break-words text-slate-200';
+  row.textContent = text;
+  log.appendChild(row);
+  // trim to MAX_CHAT messages
+  while (log.children.length > MAX_CHAT) log.removeChild(log.firstChild);
+  log.scrollTop = log.scrollHeight;
+}
+
+function sendChat() {
+  if (isSpectator) return;
+  const input = $('chatInput');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  const label = playerNames[myKey()] || mySymbol || 'You';
+  appendChat(label + ': ' + text, true);
+  send({ t: 'chat', text, who: myKey(), name: playerNames[myKey()] || '' });
+}
+
+function clearChat() {
+  const log = $('chatLog');
+  if (log) log.innerHTML = '';
+}
+
+/* ---------- win checking ---------- */
+function checkResult() {
+  for (const line of WIN_LINES) {
+    const [a,b,c,d] = line;
+    if (board[a] && board[a] === board[b] && board[a] === board[c] && board[a] === board[d]) {
+      return { winner: board[a], line };
+    }
+  }
+  if (board.every(Boolean)) return { winner: 'draw', line: null };
+  return null;
+}
+
+function handleResult(result) {
+  gameActive = false;
+  // attribute the win to the stable human behind the winning symbol this round
+  if (result.winner === 'draw') wins.draws++;
+  else if (result.winner === 'X') wins[xIsP1 ? 'p1' : 'p2']++;
+  else wins[xIsP1 ? 'p2' : 'p1']++;
+  highlightLine(result.line);
+  renderBoard();
+  updateStatus(result);   // show result using this round's symbols
+  flipRound();            // X/O sign rotates to the other player for the next round
+  renderScores();         // stable scoreboard — wins are per-human, never move
+  refreshIdentity();      // update "You are" + matchup to the new symbols
+  scheduleAutoRestart();  // the next round starts on its own — no button needed
+  saveSession();
+}
+
+// clear the board for the next round after a short pause so players see the result
+function scheduleAutoRestart() {
+  clearTimeout(restartTimer);
+  restartTimer = setTimeout(() => {
+    restartTimer = null;
+    resetBoard();
+    updateStatus();
+  }, 2600);
+}
+
+function handleOpponentLeft() {
+  if (!opponentHere) return;
+  opponentHere = false;
+  gameActive = false;
+  clearTimeout(restartTimer);
+  updateStatus();
+  appendChat('Opponent disconnected.', false);
+}
+
+/* ---------- making a move ---------- */
+function makeMove(i) {
+  if (isSpectator) return;       // spectators can never move
+  if (!gameActive) return;
+  if (currentTurn !== mySymbol) return;
+  if (board[i]) return;
+
+  board[i] = mySymbol;
+  currentTurn = opponentSymbol;
+  lastMove = i;
+  renderBoard();
+
+  send({ t: 'move', by: mySymbol, cell: i });
+  saveSession();
+
+  const result = checkResult();
+  if (result) handleResult(result);
+  else updateStatus();
+}
+
+/* ---------- MQTT plumbing ---------- */
+function connect(onReady) {
+  setConn('connecting', 'Connecting…');
+  client = mqtt.connect(BROKER_URL, {
+    clientId: 'tictac-' + myId,
+    clean: true,
+    reconnectPeriod: 2000,
+    connectTimeout: 8000
+  });
+
+  client.on('connect', () => {
+    setConn('online', 'Connected');
+    client.subscribe(topic, { qos: 0 }, () => onReady && onReady());
+  });
+
+  client.on('reconnect', () => setConn('connecting', 'Reconnecting…'));
+  client.on('close',     () => setConn('offline', 'Disconnected'));
+  client.on('error',     () => setConn('error', 'Connection error'));
+
+  client.on('message', (t, payload) => {
+    if (t !== topic) return;
+    let msg; try { msg = JSON.parse(payload.toString()); } catch { return; }
+    if (msg.sender === myId) return; // ignore our own echo
+    handleMessage(msg);
+  });
+}
+
+function send(obj) {
+  if (!client || !client.connected) return;
+  obj.sender = myId;
+  client.publish(topic, JSON.stringify(obj), { qos: 0 });
+}
+
+function handleMessage(msg) {
+  switch (msg.t) {
+    case 'host':
+      // creator's open-game beacon (retained). Joiner ignores; just confirms room exists.
+      break;
+
+    case 'join': {
+      // someone wants in. ONLY the host answers — it owns the player slots, so there
+      // is a single authority deciding who is p2 vs a spectator (no racing replies).
+      if (!isP1) break;
+      // A p2 slot is truly occupied only if opponentHere AND presence has a live p2 heartbeat
+      // (within 7 s — heartbeats fire every 4 s, so 7 s means they're gone).
+      const hasLiveP2 = opponentHere &&
+        Object.values(presence).some(p => p.role === 'p2' && Date.now() - p.seen < 7000);
+      if (!hasLiveP2) {
+        opponentHere = true;
+        gameActive = true;
+        send({ t: 'start', to: msg.sender, wins, playerNames, xIsP1, board: board.slice(), turn: currentTurn, active: gameActive });
+        updateStatus();
+      } else {
+        send({ t: 'spectate', to: msg.sender, board, turn: currentTurn, wins, playerNames, xIsP1, active: gameActive });
+      }
+      break;
+    }
+
+    case 'start':
+      if (msg.to !== myId) break;
+      roomConfirmed = true; clearTimeout(joinDeadline);
+      if (isSpectator) break;
+      opponentHere = true;
+      if (msg.wins) wins = msg.wins;
+      if (msg.playerNames) { if (msg.playerNames.p1) playerNames.p1 = msg.playerNames.p1; if (msg.playerNames.p2) playerNames.p2 = msg.playerNames.p2; }
+      if (typeof msg.xIsP1 === 'boolean') xIsP1 = msg.xIsP1;
+      if (Array.isArray(msg.board)) board = msg.board.slice();
+      if (msg.turn) currentTurn = msg.turn;
+      gameActive = (typeof msg.active === 'boolean') ? msg.active : true;
+      applyRound();
+      renderBoard();
+      renderScores();
+      refreshIdentity();
+      updateStatus();
+      announceName();
+      saveSession();
+      break;
+
+    case 'spectate':
+      // a player told us the room is full — we become a spectator.
+      if (msg.to !== myId) break;                         // addressed to a different joiner — not us
+      roomConfirmed = true; clearTimeout(joinDeadline);   // a live host answered — room is valid
+      if (isSpectator) break; // already got one; ignore duplicates
+      isSpectator = true;
+      mySymbol = null;
+      opponentSymbol = null;
+      if (Array.isArray(msg.board)) board = msg.board.slice();
+      if (msg.turn) currentTurn = msg.turn;
+      if (msg.wins) wins = msg.wins;
+      if (msg.playerNames) { if (msg.playerNames.p1) playerNames.p1 = msg.playerNames.p1; if (msg.playerNames.p2) playerNames.p2 = msg.playerNames.p2; }
+      if (typeof msg.xIsP1 === 'boolean') xIsP1 = msg.xIsP1;
+      gameActive = !!msg.active;
+      opponentHere = true;
+      applyRound();
+      $('symbolDisplay').textContent = 'Spectator';
+      $('symbolDisplay').className = 'text-lg text-slate-300';
+      $('nameInput').classList.add('hidden');          // spectators don't set a name
+      $('chatInput').disabled = true;                  // spectators can't chat
+      $('chatSendBtn').disabled = true;
+      renderBoard();
+      renderScores();
+      refreshIdentity();
+      updateStatus();
+      saveSession();
+      sendHere();
+      break;
+
+    case 'name':
+      // a player announced/changed their display name (keyed by stable identity).
+      if (msg.who === 'p1' || msg.who === 'p2') {
+        playerNames[msg.who] = msg.name || '';
+        applyRound();
+        renderMatchup();
+        renderScores();
+        updateStatus();
+        saveSession();
+      }
+      break;
+
+    case 'here': {
+      const wasNew = !presence[msg.sender];
+      presence[msg.sender] = { role: msg.role, seen: Date.now() };
+      if (wasNew) sendHere();
+      renderRoomCount();
+      // Opponent came back after disconnect — p2 triggers a rejoin to resync state
+      if (!isSpectator && !opponentHere && msg.role === (isP1 ? 'p2' : 'p1')) {
+        if (!isP1) send({ t: 'rejoin', who: 'p2' });
+      }
+      break;
+    }
+
+    case 'bye':
+      if (presence[msg.sender]) {
+        const leavingRole = presence[msg.sender].role;
+        delete presence[msg.sender];
+        renderRoomCount();
+        if (!isSpectator && leavingRole === (isP1 ? 'p2' : 'p1')) handleOpponentLeft();
+      }
+      break;
+
+    case 'rejoin':
+      if (!isP1) break;
+      if (msg.who === 'p2') {
+        opponentHere = true;
+        gameActive = true;
+        send({ t: 'start', to: msg.sender, wins, playerNames, xIsP1, board: board.slice(), turn: currentTurn, active: gameActive });
+        updateStatus();
+      }
+      break;
+
+    case 'chat': {
+      const sender = msg.name || (msg.who === 'p1' ? 'Player 1' : 'Player 2');
+      appendChat(sender + ': ' + msg.text, false);
+      break;
+    }
+
+    case 'move': {
+      if (!gameActive) break;
+      if (board[msg.cell]) break;                         // ignore dup / late
+      if (!isSpectator && msg.by !== opponentSymbol) break; // players: only opponent's move
+      board[msg.cell] = msg.by;
+      currentTurn = msg.by === 'X' ? 'O' : 'X';
+      lastMove = msg.cell;
+      renderBoard();
+      saveSession();
+      const result = checkResult();
+      if (result) handleResult(result);
+      else updateStatus();
+      break;
+    }
+  }
+}
+
+/* ---------- start a new game ---------- */
+function createGame() {
+  roomCode = genCode();
+  topic = TOPIC_PREFIX + roomCode;
+  mySymbol = 'X';
+  opponentSymbol = 'O';
+  isP1 = true;          // creator is player 1 (stable identity across rounds)
+  enterGameScreen();
+  setConn('connecting', 'Connecting…');
+  connect(() => {
+    // retained beacon so a joiner instantly knows the room is hosted
+    client.publish(topic, JSON.stringify({ t: 'host', sender: myId }), { qos: 0, retain: true });
+    sendHere();   // announce ourselves to anyone already in the room
+  });
+}
+
+function joinGame(code) {
+  code = (code || '').trim().toUpperCase();
+  if (code.length < 5) { alert('Enter a valid 5-character room code.'); return; }
+  roomCode = code;
+  topic = TOPIC_PREFIX + roomCode;
+  mySymbol = 'O';
+  opponentSymbol = 'X';
+  isP1 = false;         // joiner is player 2 (stable identity across rounds)
+  enterGameScreen();
+  setConn('connecting', 'Connecting…');
+  connect(() => {
+    send({ t: 'join' }); // ask the creator to start
+    // a live host must answer with start/spectate within this window, else the room is dead
+    roomConfirmed = false;
+    clearTimeout(joinDeadline);
+    joinDeadline = setTimeout(() => {
+      joinDeadline = null;
+      if (!roomConfirmed) leaveGame();   // no host answered — silently go back to the home screen
+    }, 3500);
+    sendHere();   // announce ourselves so the headcount includes us
+  });
+}
+
+function enterGameScreen() {
+  setupScreen.classList.add('hidden');
+  gameScreen.classList.remove('hidden');
+  $('roomDisplay').textContent = roomCode;
+
+  // fresh round/identity state for a new game (Leave → Create must start clean)
+  xIsP1 = true;
+  wins = { p1: 0, p2: 0, draws: 0 };
+  playerNames = { p1: '', p2: '' };
+  isSpectator = false;
+  opponentHere = false;
+  gameActive = false;
+  board = Array(16).fill(null);
+  currentTurn = 'X';
+  clearTimeout(restartTimer);
+
+  // presence: start fresh with just us; heartbeat keeps the headcount live
+  presence = {};
+  presence[myId] = { role: myRole(), seen: Date.now() };
+  clearInterval(presenceBeat);  presenceBeat  = setInterval(sendHere, 4000);
+  clearInterval(presencePrune); presencePrune = setInterval(prunePresence, 3000);
+
+  // reset any audio-call state from a previous game
+  clearChat();
+
+  // prefill + remember the player's name across sessions
+  let saved = '';
+  try { saved = localStorage.getItem('ttt_name') || ''; } catch {}
+  $('nameInput').value = saved;
+  $('nameInput').classList.remove('hidden');
+  if (saved) playerNames[myKey()] = saved;   // store under stable identity, not this round's symbol
+  applyRound();                               // derive mySymbol/opponentSymbol/names from identity
+
+  $('symbolDisplay').textContent = mySymbol;
+  $('symbolDisplay').className = mySymbol === 'X' ? 'text-lg text-sky-400' : 'text-lg text-rose-400';
+
+  buildBoard();
+  renderScores();
+  renderMatchup();
+  updateStatus();
+  renderRoomCount();
+  history.replaceState(null, '', `?room=${roomCode}${isP1 ? '&host=1' : '&player=2'}`);
+  saveSession();
+}
+
+function resetBoard() {
+  board = Array(16).fill(null);
+  currentTurn = 'X';   // X always opens; with side-swapping, that's a different player each round
+  gameActive = true;
+  lastMove = -1;
+  renderBoard();
+}
+
+function leaveGame() {
+  if (client) {
+    send({ t: 'bye' });
+    const _c = client;
+    client = null; // null now so no further sends happen during the delay
+    if (isP1) {
+      try { _c.publish(topic, '', { qos: 0, retain: true }); } catch {}
+    }
+    setTimeout(() => { try { _c.end(true); } catch {} }, 300); // let 'bye' reach the broker before closing
+  }
+  roomCode = topic = mySymbol = opponentSymbol = null;
+  isSpectator = false;
+  board = Array(16).fill(null);
+  currentTurn = 'X';
+  gameActive = opponentHere = false;
+  wins = { p1: 0, p2: 0, draws: 0 };
+  playerNames = { p1: '', p2: '' };
+  names = { X: '', O: '' };
+  gameScreen.classList.add('hidden');
+  setupScreen.classList.remove('hidden');
+  clearTimeout(restartTimer);
+  clearTimeout(joinDeadline); joinDeadline = null;
+  roomConfirmed = false;
+  clearInterval(presenceBeat);  presenceBeat = null;
+  clearInterval(presencePrune); presencePrune = null;
+  presence = {};
+  $('joinInput').value = '';
+  clearSession();
+  if (location.search) history.replaceState(null, '', location.pathname);
+  setConn('offline', 'Not connected');
+}
+
+/* ---------- session persistence (survives page reload) ---------- */
+function saveSession() {
+  if (!roomCode) return;
+  try { sessionStorage.setItem('ttt_session', JSON.stringify({ roomCode, isP1, isSpectator, xIsP1, wins, playerNames, board: board.slice(), currentTurn, gameActive })); } catch {}
+}
+function clearSession() {
+  try { sessionStorage.removeItem('ttt_session'); } catch {}
+}
+function rejoinAsHost(code, session) {
+  roomCode = code;
+  topic = TOPIC_PREFIX + code;
+  isP1 = true; mySymbol = 'X'; opponentSymbol = 'O';
+  enterGameScreen();
+  // enterGameScreen resets wins/playerNames/xIsP1 — restore from saved session
+  if (session && session.roomCode === code) {
+    if (session.wins) wins = session.wins;
+    if (session.playerNames) playerNames = session.playerNames;
+    if (typeof session.xIsP1 === 'boolean') xIsP1 = session.xIsP1;
+    if (session.board) { board = session.board.slice(); currentTurn = session.currentTurn || 'X'; }
+    if (typeof session.gameActive === 'boolean') gameActive = session.gameActive;
+    applyRound(); refreshIdentity(); renderScores(); renderMatchup(); renderBoard(); updateStatus();
+  }
+  setConn('connecting', 'Connecting…');
+  connect(() => {
+    client.publish(topic, JSON.stringify({ t: 'host', sender: myId }), { qos: 0, retain: true });
+    sendHere();
+  });
+}
+
+function rejoinAsPlayer2(code, session) {
+  roomCode = code;
+  topic = TOPIC_PREFIX + code;
+  isP1 = false;
+  enterGameScreen();
+  if (session && session.roomCode === code) {
+    if (session.wins) wins = session.wins;
+    if (session.playerNames) playerNames = session.playerNames;
+    if (typeof session.xIsP1 === 'boolean') xIsP1 = session.xIsP1;
+    if (session.board) { board = session.board.slice(); currentTurn = session.currentTurn || 'X'; }
+    applyRound(); refreshIdentity(); renderScores(); renderMatchup(); renderBoard(); updateStatus();
+  }
+  setConn('connecting', 'Connecting…');
+  connect(() => {
+    send({ t: 'rejoin', who: 'p2' });
+    roomConfirmed = false;
+    clearTimeout(joinDeadline);
+    joinDeadline = setTimeout(() => {
+      joinDeadline = null;
+      if (!roomConfirmed) leaveGame();
+    }, 3500);
+    sendHere();
+  });
+}
+
+/* ---------- wiring up buttons ---------- */
+$('createBtn').addEventListener('click', createGame);
+
+$('joinBtn').addEventListener('click', () => joinGame($('joinInput').value));
+$('joinInput').addEventListener('keydown', e => { if (e.key === 'Enter') joinGame(e.target.value); });
+
+$('copyBtn').addEventListener('click', () => {
+  navigator.clipboard.writeText(roomCode).then(() => {
+    $('copyBtn').textContent = 'Copied!';
+    setTimeout(() => $('copyBtn').textContent = 'Copy', 1200);
+  });
+});
+
+$('linkBtn').addEventListener('click', () => {
+  const url = `${location.origin}${location.pathname}?room=${roomCode}`;
+  navigator.clipboard.writeText(url).then(() => {
+    $('linkBtn').textContent = 'Link copied!';
+    setTimeout(() => $('linkBtn').textContent = 'Share link', 1200);
+  });
+});
+
+$('leaveBtn').addEventListener('click', leaveGame);
+$('chatSendBtn').addEventListener('click', sendChat);
+$('chatInput').addEventListener('keydown', e => { if (e.key === 'Enter') sendChat(); });
+
+/* ---------- player name (optional, broadcast to room) ---------- */
+function announceName() {
+  if (isSpectator || !mySymbol) return;
+  send({ t: 'name', who: myKey(), name: playerNames[myKey()] || '' });
+}
+
+$('nameInput').addEventListener('input', e => {
+  if (!mySymbol || isSpectator) return;
+  const v = e.target.value.trim();
+  playerNames[myKey()] = v;     // store under stable identity so it survives the X/O swap
+  try { localStorage.setItem('ttt_name', v); } catch {}
+  applyRound();                 // re-derive names[X/O] for display
+  renderMatchup();
+  renderScores();
+  updateStatus();
+  announceName();
+  saveSession();
+});
+
+/* ---------- one-click join via shared link (?room=CODE) or reload ---------- */
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(location.search);
+  const r = params.get('room');
+  const asHost = params.get('host') === '1';
+  const asPlayer2 = params.get('player') === '2';
+  let savedSession = null;
+  try { savedSession = JSON.parse(sessionStorage.getItem('ttt_session') || 'null'); } catch {}
+  if (r && asHost) {
+    rejoinAsHost(r, savedSession);
+  } else if (r && asPlayer2 && savedSession && savedSession.roomCode === r && !savedSession.isSpectator) {
+    rejoinAsPlayer2(r, savedSession);
+  } else if (r) {
+    $('joinInput').value = r.toUpperCase();
+    joinGame(r);
+  }
+});
+</script>
+</body>
+</html>

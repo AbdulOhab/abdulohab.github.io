@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>জুলাই বিপ্লব শহীদ আর্কাইভ</title>
+  <meta name="description" content="জুলাই বিপ্লবে ২,০০০+ শহীদের মধ্যে ৮০৭ জনের আর্কাইভ। প্রতিটি আলোকবিন্দু একটি জীবন।">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="জুলাই বিপ্লব শহীদ আর্কাইভ">
+  <meta property="og:description" content="জুলাই বিপ্লবে ২,০০০+ শহীদের মধ্যে ৮০৭ জনের আর্কাইভ। প্রতিটি আলোকবিন্দু একটি জীবন।">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="জুলাই বিপ্লব শহীদ আর্কাইভ">
+  <meta name="twitter:description" content="জুলাই বিপ্লবে ২,০০০+ শহীদের মধ্যে ৮০৭ জনের আর্কাইভ।">
+
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-DwLpf9xS.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CGvqJ1i5.css">
+</head>
+<body>
+  <img id="map-bg" src="./Bangladesh_divisions_english.svg" aria-hidden="true">
+  <canvas id="canvas"></canvas>
+  <div id="dots-title" aria-live="polite">জান দেবো কিন্তু <span class="hl">জুলাই</span> দেবো না</div>
+  <div id="photo-grid" class="hidden"></div>
+
+  <!-- Header -->
+  <div id="header">
+    <div id="title" role="heading" aria-level="1">
+      <svg id="title-svg" viewBox="0 0 400 70" xmlns="http://www.w3.org/2000/svg" aria-label="জান দেবো কিন্তু জুলাই দেবো না">
+        <rect x="0" y="2" width="3" height="66" fill="#CC2200" rx="1.5"/>
+        <text x="14" y="27" font-family="Hind Siliguri,sans-serif" font-size="18" font-weight="300" fill="rgba(255,255,255,0.5)" letter-spacing="0.3">জান দেবো কিন্তু</text>
+        <text x="14" y="62" font-family="Hind Siliguri,sans-serif" font-size="31" font-weight="700" letter-spacing="0.3">
+          <tspan fill="#FF4422">জুলাই</tspan><tspan fill="#ffffff"> দেবো না</tspan>
+        </text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Top buttons -->
+  <div id="top-buttons">
+    <button id="lang-toggle" aria-label="Toggle language">EN</button>
+    <button id="info-btn" aria-label="Information">i</button>
+    <button id="search-btn" aria-label="Search by name">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </button>
+    <button id="filter-btn" aria-label="Filter by division">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M1 3h14M3 8h10M5.5 13h5"/>
+      </svg>
+    </button>
+    <button id="layout-btn" aria-label="Layout" aria-haspopup="true">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+        <rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/>
+        <rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/>
+      </svg>
+    </button>
+    <button id="known-toggle-btn" aria-label="Show only documented martyrs">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    </button>
+    <button id="age-btn" aria-label="Filter by age">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 20c0-3.8 3.6-7 8-7s8 3.2 8 7"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <p id="subtitle">জুলাই বিপ্লবে ২,০০০+ শহীদের মধ্যে এই আর্কাইভে <span id="count">৮০৭</span> জনের তথ্য সংরক্ষিত।</p>
+  </div>
+
+  <!-- Hover info card -->
+  <div id="info-card" class="hidden">
+    <img id="card-img" src="" alt="" loading="lazy">
+    <div id="card-text">
+      <div id="card-name"></div>
+      <div id="card-occ"></div>
+      <div id="card-date"></div>
+    </div>
+  </div>
+
+  <!-- Layout dropdown -->
+  <div id="layout-panel" class="panel hidden">
+    <div id="layout-options">
+      <button class="layout-opt active" data-layout="dots" aria-label="ডটস">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+      </button>
+      <button class="layout-opt" data-layout="photos" aria-label="ফটো ওয়াল">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </button>
+      <button class="layout-opt" data-layout="map" aria-label="ম্যাপ">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Filter panel -->
+  <div id="filter-panel" class="panel hidden">
+    <div class="panel-header">
+      <span id="filter-title">বিভাগ অনুযায়ী ফিল্টার</span>
+      <button id="filter-close" aria-label="Close">&times;</button>
+    </div>
+    <div id="division-buttons"></div>
+    <div class="panel-footer">
+      <span id="filter-showing">দেখাচ্ছে: <strong id="filter-count">০</strong></span>
+      <button id="filter-reset">রিসেট</button>
+    </div>
+  </div>
+
+  <!-- Age panel -->
+  <div id="age-panel" class="panel hidden">
+    <div class="panel-header">
+      <span id="age-title">বয়স অনুযায়ী ফিল্টার</span>
+      <button id="age-close" aria-label="Close">&times;</button>
+    </div>
+    <div id="age-control">
+      <div id="age-values"><span id="age-min-val">০</span> – <span id="age-max-val">৭১</span> <span id="age-unit">বছর</span></div>
+      <div class="range-wrap">
+        <div class="range-track"></div>
+        <div class="range-fill" id="age-range-fill"></div>
+        <input type="range" id="age-min" min="0" max="71" value="0" step="1" aria-label="Minimum age">
+        <input type="range" id="age-max" min="0" max="71" value="71" step="1" aria-label="Maximum age">
+      </div>
+    </div>
+    <div class="panel-footer">
+      <span id="age-showing">দেখাচ্ছে: <strong id="age-count">০</strong></span>
+      <button id="age-reset">রিসেট</button>
+    </div>
+  </div>
+
+  <!-- Search panel -->
+  <div id="search-panel" class="panel hidden">
+    <div class="panel-header">
+      <span id="search-title">নাম খুঁজুন</span>
+      <button id="search-close" aria-label="Close">&times;</button>
+    </div>
+    <input id="search-input" type="search" placeholder="নাম লিখুন..." autocomplete="off">
+    <div class="panel-footer">
+      <span id="search-showing">দেখাচ্ছে: <strong id="search-count">০</strong></span>
+      <button id="search-reset">রিসেট</button>
+    </div>
+  </div>
+
+  <!-- Info modal -->
+  <div id="info-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Detail modal (click on dot) -->
+  <div id="detail-modal" class="modal hidden">
+    <div class="modal-content detail-content">
+      <button class="modal-close" id="detail-close" aria-label="Close">&times;</button>
+      <div id="detail-inner">
+        <div id="detail-img-wrap">
+          <img id="detail-img" src="" alt="" loading="lazy">
+          <div id="detail-no-img" style="display:none"></div>
+        </div>
+        <div id="detail-info">
+          <h2 id="detail-name"></h2>
+          <p id="detail-occ"></p>
+          <p id="detail-birth"></p>
+          <p id="detail-age"></p>
+          <p id="detail-martyrdom"></p>
+          <p id="detail-place"></p>
+          <p id="detail-division"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading screen -->
+  <div id="loading">
+    <div id="loading-inner">
+      <div id="loading-logo"> 
+        <img id="loading-favicon" src="./favicon.svg" alt="" aria-hidden="true">
+      </div>
+      <svg id="loading-dots" viewBox="0 0 64 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="10" r="4" fill="#CC2200">
+          <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.4s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="4;2.5;4" dur="1.4s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="32" cy="10" r="4" fill="#CC2200">
+          <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.4s" begin="0.45s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="4;2.5;4" dur="1.4s" begin="0.45s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="52" cy="10" r="4" fill="#CC2200">
+          <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.4s" begin="0.9s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="4;2.5;4" dur="1.4s" begin="0.9s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      <div id="loading-bar">
+        <div id="loading-fill"></div>
+      </div>
+      <button id="enter-btn" class="hidden" aria-label="প্রবেশ করুন">
+        <svg viewBox="0 0 52 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line x1="4" y1="12" x2="44" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <polyline points="34,4 44,12 34,20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

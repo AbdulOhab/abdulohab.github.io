@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Connect Four — Online</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/mqtt@4.3.7/dist/mqtt.min.js"></script>
+<style>
+  .disc {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    transition: background-color 0.12s, box-shadow 0.12s;
+  }
+  .disc-empty {
+    background-color: rgba(255,255,255,0.06);
+    border: 2px solid rgba(255,255,255,0.08);
+  }
+  .disc-red {
+    background: radial-gradient(circle at 35% 35%, #f87171, #b91c1c);
+    box-shadow: 0 2px 8px rgba(239,68,68,0.55), inset 0 1px 2px rgba(255,255,255,0.2);
+  }
+  .disc-yellow {
+    background: radial-gradient(circle at 35% 35%, #fde047, #a16207);
+    box-shadow: 0 2px 8px rgba(234,179,8,0.55), inset 0 1px 2px rgba(255,255,255,0.2);
+  }
+  .disc-win {
+    box-shadow: 0 0 0 3px white, 0 0 18px 4px rgba(255,255,255,0.5) !important;
+    animation: pulse-win 0.8s ease-in-out infinite alternate;
+  }
+  @keyframes pulse-win {
+    from { box-shadow: 0 0 0 3px white, 0 0 14px 2px rgba(255,255,255,0.4); }
+    to   { box-shadow: 0 0 0 3px white, 0 0 24px 8px rgba(255,255,255,0.7); }
+  }
+  .drop-anim { animation: drop 0.22s cubic-bezier(.25,.46,.45,.94); }
+  @keyframes drop {
+    0%   { transform: translateY(-280%) scale(0.8); opacity: 0.4; }
+    100% { transform: translateY(0)    scale(1);   opacity: 1;   }
+  }
+  .col-hover-r { background-color: rgba(239,68,68,0.12) !important; }
+  .col-hover-y { background-color: rgba(234,179,8,0.12) !important; }
+</style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white flex items-center justify-center p-3 font-sans">
+
+  <div class="w-full max-w-lg">
+    <header class="text-center mb-4">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Connect Four</h1>
+      <p class="text-slate-300 text-sm mt-1">Drop 4 in a row — play with a friend anywhere.</p>
+    </header>
+
+    <div id="statusBar" class="flex items-center justify-center gap-2 text-xs mb-4">
+      <span id="connDot" class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
+      <span id="connText" class="text-slate-300">Not connected</span>
+    </div>
+
+    <!-- SETUP SCREEN -->
+    <section id="setupScreen" class="bg-white/5 backdrop-blur rounded-2xl p-4 sm:p-6 border border-white/10 space-y-4">
+      <button id="createBtn"
+        class="w-full bg-indigo-600 hover:bg-indigo-500 transition rounded-xl py-3 font-semibold text-lg shadow-lg shadow-indigo-900/40">
+        Create Game
+      </button>
+      <div class="flex items-center gap-3 text-slate-400 text-xs">
+        <span class="flex-1 h-px bg-white/10"></span> OR <span class="flex-1 h-px bg-white/10"></span>
+      </div>
+      <div class="flex gap-2">
+        <input id="joinInput" maxlength="5" placeholder="ROOM CODE"
+          class="flex-1 bg-white/10 border border-white/10 rounded-xl px-4 py-3 uppercase tracking-widest text-center font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-slate-500 placeholder:normal-case placeholder:tracking-normal" />
+        <button id="joinBtn"
+          class="bg-emerald-600 hover:bg-emerald-500 transition rounded-xl px-5 py-3 font-semibold">
+          Join
+        </button>
+      </div>
+      <p class="text-center text-xs text-slate-400">Ask your friend for their room code, or create a game and share yours.</p>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="gameScreen" class="hidden space-y-3">
+      <!-- room code + share -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-3 sm:p-4 flex items-center justify-between">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-slate-400">Room code</p>
+          <p id="roomDisplay" class="font-mono text-xl sm:text-2xl font-bold tracking-[0.25em]"></p>
+          <p id="roomCount" class="text-xs text-slate-400 mt-0.5"></p>
+        </div>
+        <div class="flex gap-2">
+          <button id="copyBtn" class="text-xs bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2">Copy</button>
+          <button id="linkBtn" class="text-xs bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2">Share link</button>
+        </div>
+      </div>
+
+      <!-- who am I + name + turn status -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-3 space-y-2">
+        <div class="flex items-center justify-between gap-3">
+          <span class="text-sm text-slate-300 shrink-0">You are: <b id="symbolDisplay" class="text-base"></b></span>
+          <input id="nameInput" maxlength="14" placeholder="Your name (optional)"
+            class="bg-white/10 border border-white/10 rounded-lg px-3 py-1.5 text-sm w-40 focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-slate-500" />
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <span id="matchup" class="text-xs text-slate-400 truncate"></span>
+          <span id="turnStatus" class="text-sm font-semibold text-indigo-300 shrink-0"></span>
+        </div>
+      </div>
+
+      <!-- board -->
+      <div class="bg-indigo-950/70 border border-white/10 rounded-2xl p-2.5 sm:p-3">
+        <!-- drop-zone buttons, one per column -->
+        <div id="colBtns" class="grid grid-cols-7 gap-1 mb-1.5"></div>
+        <!-- the 6×7 disc grid -->
+        <div id="board" class="grid grid-cols-7 gap-1"></div>
+      </div>
+
+      <!-- scoreboard -->
+      <div class="grid grid-cols-3 gap-2 text-center">
+        <div class="bg-white/5 border border-white/10 rounded-xl py-2 px-1">
+          <p id="label1" class="text-[10px] uppercase tracking-widest text-red-400 truncate">Player 1</p>
+          <p id="score1" class="text-xl font-bold text-red-400">0</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-xl py-2 px-1">
+          <p class="text-[10px] uppercase tracking-widest text-slate-400">Draws</p>
+          <p id="scoreD" class="text-xl font-bold text-slate-300">0</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-xl py-2 px-1">
+          <p id="label2" class="text-[10px] uppercase tracking-widest text-yellow-400 truncate">Player 2</p>
+          <p id="score2" class="text-xl font-bold text-yellow-400">0</p>
+        </div>
+      </div>
+
+      <!-- chat -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+        <div id="chatLog" class="h-28 overflow-y-auto px-3 py-2 space-y-1 flex flex-col"></div>
+        <div class="flex gap-2 border-t border-white/10 px-2 py-2">
+          <input id="chatInput" maxlength="200" placeholder="Message…"
+            class="flex-1 bg-white/10 border border-white/10 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-slate-500" />
+          <button id="chatSendBtn" class="bg-indigo-600 hover:bg-indigo-500 transition rounded-lg px-4 py-1.5 text-sm font-semibold">Send</button>
+        </div>
+      </div>
+
+      <div class="flex gap-2">
+        <button id="leaveBtn" class="flex-1 bg-white/10 hover:bg-white/20 transition rounded-xl py-3 font-semibold">Leave</button>
+      </div>
+    </section>
+
+    <p class="text-center text-[11px] text-slate-500 mt-5">
+      Powered by the public HiveMQ MQTT broker over WebSocket.
+    </p>
+  </div>
+
+<script>
+const BROKER_URL  = 'wss://broker.hivemq.com:8884/mqtt';
+console.log('%c[Connect Four] build-1 loaded', 'color:#818cf8;font-weight:bold');
+const TOPIC_PREFIX = 'connectfour-nologin/';
+const ROWS = 6, COLS = 7;
+
+// Pre-compute all winning 4-in-a-row lines for a 6×7 board.
+// Cell index = row * COLS + col, row 0 = top.
+const WIN_LINES = (() => {
+  const lines = [];
+  for (let r = 0; r < ROWS; r++)
+    for (let c = 0; c <= COLS - 4; c++)
+      lines.push([r*COLS+c, r*COLS+c+1, r*COLS+c+2, r*COLS+c+3]);
+  for (let c = 0; c < COLS; c++)
+    for (let r = 0; r <= ROWS - 4; r++)
+      lines.push([r*COLS+c, (r+1)*COLS+c, (r+2)*COLS+c, (r+3)*COLS+c]);
+  for (let r = 0; r <= ROWS - 4; r++)
+    for (let c = 0; c <= COLS - 4; c++)
+      lines.push([r*COLS+c, (r+1)*COLS+c+1, (r+2)*COLS+c+2, (r+3)*COLS+c+3]);
+  for (let r = 0; r <= ROWS - 4; r++)
+    for (let c = 3; c < COLS; c++)
+      lines.push([r*COLS+c, (r+1)*COLS+c-1, (r+2)*COLS+c-2, (r+3)*COLS+c-3]);
+  return lines;
+})();
+
+// ---- state ----
+let client        = null;
+let roomCode      = null;
+let topic         = null;
+let mySymbol      = null;       // 'R' | 'Y' | null (spectator)
+let opponentSymbol= null;
+let isSpectator   = false;
+let isP1          = false;
+let redIsP1       = true;       // does P1 play Red this round? flips after every game
+let board         = Array(ROWS * COLS).fill(null);
+let currentTurn   = 'R';       // Red always opens
+let gameActive    = false;
+let restartTimer  = null;
+let lastMove      = -1;
+let joinDeadline  = null;
+let roomConfirmed = false;
+let presence      = {};
+let presenceBeat  = null;
+let presencePrune = null;
+let opponentHere  = false;
+let wins          = { p1: 0, p2: 0, draws: 0 };
+let playerNames   = { p1: '', p2: '' };
+let names         = { R: '', Y: '' };
+const MAX_CHAT    = 80;
+const myId        = Math.random().toString(36).slice(2, 9);
+
+// ---- DOM shortcuts ----
+const $           = id => document.getElementById(id);
+const setupScreen = $('setupScreen');
+const gameScreen  = $('gameScreen');
+const boardEl     = $('board');
+const colBtnsEl   = $('colBtns');
+
+/* ── utility ── */
+function genCode() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let s = '';
+  for (let i = 0; i < 5; i++) s += chars[Math.floor(Math.random() * chars.length)];
+  return s;
+}
+
+function setConn(state, text) {
+  $('connDot').className = 'w-2.5 h-2.5 rounded-full ' + (
+    { online:'bg-emerald-400', connecting:'bg-amber-400', offline:'bg-slate-500', error:'bg-rose-500' }[state] || 'bg-slate-500'
+  );
+  $('connText').textContent = text;
+}
+
+/* ── board rendering ── */
+function buildBoard() {
+  colBtnsEl.innerHTML = '';
+  boardEl.innerHTML   = '';
+
+  for (let c = 0; c < COLS; c++) {
+    const btn = document.createElement('button');
+    btn.className = 'w-full flex items-center justify-center py-1 rounded-lg transition-colors select-none';
+    btn.dataset.col = c;
+    btn.addEventListener('click', () => dropDisc(c));
+    btn.addEventListener('mouseenter', () => onColHover(c, true));
+    btn.addEventListener('mouseleave', () => onColHover(c, false));
+    // touch: show hint on touchstart, drop on touchend
+    btn.addEventListener('touchstart', () => onColHover(c, true), { passive: true });
+    btn.addEventListener('touchend',   () => { onColHover(c, false); dropDisc(c); }, { passive: true });
+    colBtnsEl.appendChild(btn);
+  }
+
+  for (let i = 0; i < ROWS * COLS; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'disc disc-empty';
+    boardEl.appendChild(cell);
+  }
+
+  renderBoard();
+  renderColBtns();
+}
+
+function renderBoard() {
+  [...boardEl.children].forEach((cell, i) => {
+    cell.classList.remove('disc-red', 'disc-yellow', 'disc-empty', 'disc-win', 'drop-anim');
+    if      (board[i] === 'R') cell.classList.add('disc-red');
+    else if (board[i] === 'Y') cell.classList.add('disc-yellow');
+    else                       cell.classList.add('disc-empty');
+    if (i === lastMove) cell.classList.add('drop-anim');
+  });
+}
+
+function renderColBtns() {
+  const canMove = gameActive && !isSpectator && currentTurn === mySymbol;
+  const hoverClass = mySymbol === 'R' ? 'col-hover-r' : 'col-hover-y';
+  const indicator  = mySymbol === 'R' ? '🔴' : '🟡';
+  [...colBtnsEl.children].forEach((btn, c) => {
+    const full = board[c] !== null; // top row occupied = column full
+    btn.textContent = (canMove && !full) ? indicator : '';
+    btn.style.cursor = canMove && !full ? 'pointer' : 'default';
+    btn.dataset.hoverClass = hoverClass;
+    btn.dataset.canHover   = canMove && !full ? '1' : '0';
+  });
+}
+
+function onColHover(c, enter) {
+  const btn = colBtnsEl.children[c];
+  if (btn.dataset.canHover !== '1') return;
+  // tint the whole column on hover
+  for (let r = 0; r < ROWS; r++) {
+    const cell = boardEl.children[r * COLS + c];
+    if (enter) cell.classList.add(btn.dataset.hoverClass);
+    else       cell.classList.remove('col-hover-r', 'col-hover-y');
+  }
+}
+
+function highlightLine(line) {
+  if (!line) return;
+  for (const i of line) boardEl.children[i].classList.add('disc-win');
+}
+
+/* ── status text ── */
+const colorName   = sym => sym === 'R' ? 'Red' : 'Yellow';
+const shortLabel  = sym => names[sym] || colorName(sym);
+const fullLabel   = sym => names[sym] ? `${names[sym]} (${colorName(sym)})` : colorName(sym);
+
+function renderMatchup() {
+  $('matchup').textContent = fullLabel('R') + '   vs   ' + fullLabel('Y');
+}
+
+function updateStatus(result) {
+  const el = $('turnStatus');
+  if (isSpectator) {
+    el.textContent = result
+      ? (result.winner === 'draw' ? 'Draw — spectating' : shortLabel(result.winner) + ' wins — spectating')
+      : gameActive ? 'Spectating — ' + shortLabel(currentTurn) + ' to move' : 'Spectating — waiting';
+    el.className = 'text-sm font-semibold text-slate-300';
+    return;
+  }
+  if (result) {
+    el.textContent = result.winner === 'draw' ? "It's a draw!"
+      : result.winner === mySymbol ? 'You win! 🎉' : shortLabel(result.winner) + ' wins';
+    el.className = 'text-sm font-semibold text-amber-300';
+    return;
+  }
+  if (!opponentHere) {
+    el.textContent = 'Waiting for opponent…';
+    el.className = 'text-sm font-semibold text-amber-300';
+    return;
+  }
+  if (currentTurn === mySymbol) {
+    el.textContent = 'Your turn';
+    el.className = 'text-sm font-semibold text-emerald-300';
+  } else {
+    el.textContent = shortLabel(opponentSymbol) + "'s turn";
+    el.className = 'text-sm font-semibold text-indigo-300';
+  }
+}
+
+function renderScores() {
+  // Scoreboard labels track stable human identity (p1/p2), not color.
+  // Colors shown match whatever color each player currently holds this round.
+  const p1c = redIsP1 ? ['text-red-400']    : ['text-yellow-400'];
+  const p2c = redIsP1 ? ['text-yellow-400'] : ['text-red-400'];
+  $('score1').textContent = wins.p1;
+  $('score2').textContent = wins.p2;
+  $('scoreD').textContent = wins.draws;
+  $('label1').textContent = playerNames.p1 || 'Player 1';
+  $('label2').textContent = playerNames.p2 || 'Player 2';
+  $('label1').className = `text-[10px] uppercase tracking-widest truncate ${p1c[0]}`;
+  $('score1').className = `text-xl font-bold ${p1c[0]}`;
+  $('label2').className = `text-[10px] uppercase tracking-widest truncate ${p2c[0]}`;
+  $('score2').className = `text-xl font-bold ${p2c[0]}`;
+}
+
+const opposite = s => (s === 'R' ? 'Y' : 'R');
+const myKey    = () => (isP1 ? 'p1' : 'p2');
+
+function applyRound() {
+  if (!isSpectator) {
+    mySymbol       = isP1 ? (redIsP1 ? 'R' : 'Y') : (redIsP1 ? 'Y' : 'R');
+    opponentSymbol = opposite(mySymbol);
+  }
+  names = redIsP1 ? { R: playerNames.p1, Y: playerNames.p2 }
+                  : { R: playerNames.p2, Y: playerNames.p1 };
+}
+
+function flipRound() { redIsP1 = !redIsP1; applyRound(); }
+
+function refreshIdentity() {
+  if (!isSpectator && mySymbol) {
+    const cls = mySymbol === 'R' ? 'text-base text-red-400' : 'text-base text-yellow-400';
+    $('symbolDisplay').textContent = mySymbol === 'R' ? '🔴 Red' : '🟡 Yellow';
+    $('symbolDisplay').className   = cls;
+  }
+  renderMatchup();
+}
+
+/* ── room presence ── */
+const myRole = () => (isSpectator ? 'spec' : myKey());
+
+function renderRoomCount() {
+  const list     = Object.values(presence);
+  const watchers = list.filter(p => p.role === 'spec').length;
+  const total    = list.length;
+  const el = $('roomCount');
+  if (el) el.textContent = watchers ? `${total} in room · ${watchers} watching` : `${total} in room`;
+}
+
+function sendHere() {
+  if (!client) return;
+  presence[myId] = { role: myRole(), seen: Date.now() };
+  send({ t: 'here', role: myRole() });
+  renderRoomCount();
+}
+
+function prunePresence() {
+  const cutoff  = Date.now() - 9000;
+  const oppRole = isSpectator ? null : (isP1 ? 'p2' : 'p1');
+  let changed   = false;
+  for (const id in presence) {
+    if (presence[id].seen < cutoff) {
+      if (oppRole && presence[id].role === oppRole) handleOpponentLeft();
+      delete presence[id];
+      changed = true;
+    }
+  }
+  if (changed) renderRoomCount();
+}
+
+/* ── chat ── */
+function appendChat(text, mine) {
+  const log = $('chatLog');
+  if (!log) return;
+  const row = document.createElement('div');
+  row.className = mine
+    ? 'self-end max-w-[80%] bg-indigo-600/70 rounded-xl rounded-br-sm px-2.5 py-1 text-sm break-words'
+    : 'self-start max-w-[80%] bg-white/10 rounded-xl rounded-bl-sm px-2.5 py-1 text-sm break-words text-slate-200';
+  row.textContent = text;
+  log.appendChild(row);
+  while (log.children.length > MAX_CHAT) log.removeChild(log.firstChild);
+  log.scrollTop = log.scrollHeight;
+}
+
+function sendChat() {
+  if (isSpectator) return;
+  const input = $('chatInput');
+  const text  = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  const label = playerNames[myKey()] || colorName(mySymbol);
+  appendChat(label + ': ' + text, true);
+  send({ t: 'chat', text, who: myKey(), name: playerNames[myKey()] || '' });
+}
+
+function clearChat() { const l = $('chatLog'); if (l) l.innerHTML = ''; }
+
+/* ── win checking ── */
+function checkResult() {
+  for (const [a,b,c,d] of WIN_LINES) {
+    if (board[a] && board[a] === board[b] && board[a] === board[c] && board[a] === board[d])
+      return { winner: board[a], line: [a,b,c,d] };
+  }
+  if (board.every(Boolean)) return { winner: 'draw', line: null };
+  return null;
+}
+
+function handleResult(result) {
+  gameActive = false;
+  if (result.winner === 'draw')    wins.draws++;
+  else if (result.winner === 'R')  wins[redIsP1 ? 'p1' : 'p2']++;
+  else                             wins[redIsP1 ? 'p2' : 'p1']++;
+  highlightLine(result.line);
+  renderBoard();
+  updateStatus(result);
+  flipRound();
+  renderScores();
+  refreshIdentity();
+  renderColBtns();
+  scheduleAutoRestart();
+  saveSession();
+}
+
+function scheduleAutoRestart() {
+  clearTimeout(restartTimer);
+  restartTimer = setTimeout(() => {
+    restartTimer = null;
+    resetBoard();
+    updateStatus();
+  }, 3200);
+}
+
+function handleOpponentLeft() {
+  if (!opponentHere) return;
+  opponentHere = false;
+  gameActive   = false;
+  clearTimeout(restartTimer);
+  updateStatus();
+  renderColBtns();
+  appendChat('Opponent disconnected.', false);
+}
+
+/* ── drop logic ── */
+// Returns the lowest empty row index in a column, or -1 if full.
+function findRow(col) {
+  for (let r = ROWS - 1; r >= 0; r--) {
+    if (!board[r * COLS + col]) return r;
+  }
+  return -1;
+}
+
+function dropDisc(col) {
+  if (isSpectator || !gameActive || currentTurn !== mySymbol) return;
+  const row = findRow(col);
+  if (row === -1) return;
+  const idx = row * COLS + col;
+  board[idx]   = mySymbol;
+  currentTurn  = opponentSymbol;
+  lastMove     = idx;
+  renderBoard();
+  renderColBtns();
+  send({ t: 'move', by: mySymbol, col });
+  saveSession();
+  const result = checkResult();
+  if (result) handleResult(result);
+  else        updateStatus();
+}
+
+/* ── MQTT ── */
+function connect(onReady) {
+  setConn('connecting', 'Connecting…');
+  client = mqtt.connect(BROKER_URL, {
+    clientId: 'c4-' + myId,
+    clean: true,
+    reconnectPeriod: 2000,
+    connectTimeout: 8000,
+  });
+  client.on('connect',   () => { setConn('online', 'Connected'); client.subscribe(topic, { qos: 0 }, () => onReady && onReady()); });
+  client.on('reconnect', () => setConn('connecting', 'Reconnecting…'));
+  client.on('close',     () => setConn('offline', 'Disconnected'));
+  client.on('error',     () => setConn('error', 'Connection error'));
+  client.on('message', (t, payload) => {
+    if (t !== topic) return;
+    let msg; try { msg = JSON.parse(payload.toString()); } catch { return; }
+    if (msg.sender === myId) return;
+    handleMessage(msg);
+  });
+}
+
+function send(obj) {
+  if (!client || !client.connected) return;
+  obj.sender = myId;
+  client.publish(topic, JSON.stringify(obj), { qos: 0 });
+}
+
+function syncFromMsg(msg) {
+  if (msg.wins)                         wins        = msg.wins;
+  if (msg.playerNames?.p1)              playerNames.p1 = msg.playerNames.p1;
+  if (msg.playerNames?.p2)              playerNames.p2 = msg.playerNames.p2;
+  if (typeof msg.redIsP1 === 'boolean') redIsP1     = msg.redIsP1;
+  if (Array.isArray(msg.board))         board       = msg.board.slice();
+  if (msg.turn)                         currentTurn = msg.turn;
+}
+
+function handleMessage(msg) {
+  switch (msg.t) {
+
+    case 'host': break;
+
+    case 'join': {
+      if (!isP1) break;
+      const hasLiveP2 = opponentHere &&
+        Object.values(presence).some(p => p.role === 'p2' && Date.now() - p.seen < 7000);
+      if (!hasLiveP2) {
+        opponentHere = true;
+        gameActive   = true;
+        send({ t: 'start', to: msg.sender, wins, playerNames, redIsP1, board: board.slice(), turn: currentTurn, active: gameActive });
+        updateStatus(); renderColBtns();
+      } else {
+        send({ t: 'spectate', to: msg.sender, board: board.slice(), turn: currentTurn, wins, playerNames, redIsP1, active: gameActive });
+      }
+      break;
+    }
+
+    case 'start':
+      if (msg.to !== myId) break;
+      roomConfirmed = true; clearTimeout(joinDeadline);
+      if (isSpectator) break;
+      opponentHere = true;
+      gameActive   = typeof msg.active === 'boolean' ? msg.active : true;
+      syncFromMsg(msg);
+      applyRound(); renderBoard(); renderScores(); refreshIdentity(); updateStatus(); renderColBtns();
+      announceName(); saveSession();
+      break;
+
+    case 'spectate':
+      if (msg.to !== myId) break;
+      roomConfirmed = true; clearTimeout(joinDeadline);
+      if (isSpectator) break;
+      isSpectator = true; mySymbol = null; opponentSymbol = null;
+      gameActive  = !!msg.active; opponentHere = true;
+      syncFromMsg(msg);
+      applyRound();
+      $('symbolDisplay').textContent = 'Spectator';
+      $('symbolDisplay').className   = 'text-base text-slate-300';
+      $('nameInput').classList.add('hidden');
+      $('chatInput').disabled = $('chatSendBtn').disabled = true;
+      renderBoard(); renderScores(); refreshIdentity(); updateStatus(); renderColBtns();
+      saveSession(); sendHere();
+      break;
+
+    case 'name':
+      if (msg.who === 'p1' || msg.who === 'p2') {
+        playerNames[msg.who] = msg.name || '';
+        applyRound(); renderMatchup(); renderScores(); updateStatus(); saveSession();
+      }
+      break;
+
+    case 'here': {
+      const wasNew = !presence[msg.sender];
+      presence[msg.sender] = { role: msg.role, seen: Date.now() };
+      if (wasNew) sendHere();
+      renderRoomCount();
+      if (!isSpectator && !opponentHere && msg.role === (isP1 ? 'p2' : 'p1'))
+        if (!isP1) send({ t: 'rejoin', who: 'p2' });
+      break;
+    }
+
+    case 'bye':
+      if (presence[msg.sender]) {
+        const lr = presence[msg.sender].role;
+        delete presence[msg.sender];
+        renderRoomCount();
+        if (!isSpectator && lr === (isP1 ? 'p2' : 'p1')) handleOpponentLeft();
+      }
+      break;
+
+    case 'rejoin':
+      if (!isP1 || msg.who !== 'p2') break;
+      opponentHere = true; gameActive = true;
+      send({ t: 'start', to: msg.sender, wins, playerNames, redIsP1, board: board.slice(), turn: currentTurn, active: gameActive });
+      updateStatus(); renderColBtns();
+      break;
+
+    case 'chat': {
+      const who = msg.name || (msg.who === 'p1' ? 'Player 1' : 'Player 2');
+      appendChat(who + ': ' + msg.text, false);
+      break;
+    }
+
+    case 'move': {
+      if (!gameActive) break;
+      if (!isSpectator && msg.by !== opponentSymbol) break;
+      const row = findRow(msg.col);
+      if (row === -1) break;
+      const idx = row * COLS + msg.col;
+      board[idx]  = msg.by;
+      currentTurn = opposite(msg.by);
+      lastMove    = idx;
+      renderBoard(); renderColBtns(); saveSession();
+      const result = checkResult();
+      if (result) handleResult(result);
+      else        updateStatus();
+      break;
+    }
+  }
+}
+
+/* ── game flow ── */
+function createGame() {
+  roomCode = genCode();
+  topic    = TOPIC_PREFIX + roomCode;
+  isP1     = true;
+  enterGameScreen();
+  setConn('connecting', 'Connecting…');
+  connect(() => {
+    client.publish(topic, JSON.stringify({ t: 'host', sender: myId }), { qos: 0, retain: true });
+    sendHere();
+  });
+}
+
+function joinGame(code) {
+  code = (code || '').trim().toUpperCase();
+  if (code.length < 5) { alert('Enter a valid 5-character room code.'); return; }
+  roomCode = code;
+  topic    = TOPIC_PREFIX + roomCode;
+  isP1     = false;
+  enterGameScreen();
+  setConn('connecting', 'Connecting…');
+  connect(() => {
+    send({ t: 'join' });
+    roomConfirmed = false; clearTimeout(joinDeadline);
+    joinDeadline  = setTimeout(() => { joinDeadline = null; if (!roomConfirmed) leaveGame(); }, 3500);
+    sendHere();
+  });
+}
+
+function enterGameScreen() {
+  setupScreen.classList.add('hidden');
+  gameScreen.classList.remove('hidden');
+  $('roomDisplay').textContent = roomCode;
+
+  redIsP1     = true;
+  wins        = { p1: 0, p2: 0, draws: 0 };
+  playerNames = { p1: '', p2: '' };
+  isSpectator = opponentHere = gameActive = false;
+  board       = Array(ROWS * COLS).fill(null);
+  currentTurn = 'R';
+  lastMove    = -1;
+  clearTimeout(restartTimer);
+
+  presence = {}; presence[myId] = { role: myRole(), seen: Date.now() };
+  clearInterval(presenceBeat);  presenceBeat  = setInterval(sendHere, 4000);
+  clearInterval(presencePrune); presencePrune = setInterval(prunePresence, 3000);
+
+  clearChat();
+
+  let saved = ''; try { saved = localStorage.getItem('ttt_name') || ''; } catch {}
+  $('nameInput').value = saved;
+  $('nameInput').classList.remove('hidden');
+  $('chatInput').disabled = $('chatSendBtn').disabled = false;
+  if (saved) playerNames[myKey()] = saved;
+  applyRound();
+
+  buildBoard();
+  renderScores();
+  renderMatchup();
+  updateStatus();
+  renderRoomCount();
+  refreshIdentity();
+  history.replaceState(null, '', `?room=${roomCode}${isP1 ? '&host=1' : '&player=2'}`);
+  saveSession();
+}
+
+function resetBoard() {
+  board       = Array(ROWS * COLS).fill(null);
+  currentTurn = 'R';
+  gameActive  = true;
+  lastMove    = -1;
+  renderBoard();
+  renderColBtns();
+}
+
+function leaveGame() {
+  if (client) {
+    send({ t: 'bye' });
+    const _c = client; client = null;
+    if (isP1) try { _c.publish(topic, '', { qos: 0, retain: true }); } catch {}
+    setTimeout(() => { try { _c.end(true); } catch {} }, 300);
+  }
+  roomCode = topic = mySymbol = opponentSymbol = null;
+  isSpectator = gameActive = opponentHere = false;
+  board       = Array(ROWS * COLS).fill(null);
+  currentTurn = 'R';
+  wins        = { p1: 0, p2: 0, draws: 0 };
+  playerNames = { p1: '', p2: '' };
+  names       = { R: '', Y: '' };
+  gameScreen.classList.add('hidden');
+  setupScreen.classList.remove('hidden');
+  clearTimeout(restartTimer);
+  clearTimeout(joinDeadline); joinDeadline = null;
+  roomConfirmed = false;
+  clearInterval(presenceBeat);  presenceBeat  = null;
+  clearInterval(presencePrune); presencePrune = null;
+  presence = {};
+  $('joinInput').value = '';
+  clearSession();
+  if (location.search) history.replaceState(null, '', location.pathname);
+  setConn('offline', 'Not connected');
+}
+
+/* ── session persistence ── */
+function saveSession() {
+  if (!roomCode) return;
+  try { sessionStorage.setItem('c4_session', JSON.stringify({ roomCode, isP1, isSpectator, redIsP1, wins, playerNames, board: board.slice(), currentTurn, gameActive })); } catch {}
+}
+function clearSession() { try { sessionStorage.removeItem('c4_session'); } catch {} }
+
+function rejoinAsHost(code, s) {
+  roomCode = code; topic = TOPIC_PREFIX + code; isP1 = true;
+  enterGameScreen();
+  if (s?.roomCode === code) {
+    if (s.wins)                         wins        = s.wins;
+    if (s.playerNames)                  playerNames = s.playerNames;
+    if (typeof s.redIsP1 === 'boolean') redIsP1     = s.redIsP1;
+    if (s.board)                        { board = s.board.slice(); currentTurn = s.currentTurn || 'R'; }
+    if (typeof s.gameActive === 'boolean') gameActive = s.gameActive;
+    applyRound(); refreshIdentity(); renderScores(); renderMatchup(); renderBoard(); renderColBtns(); updateStatus();
+  }
+  setConn('connecting', 'Connecting…');
+  connect(() => { client.publish(topic, JSON.stringify({ t: 'host', sender: myId }), { qos: 0, retain: true }); sendHere(); });
+}
+
+function rejoinAsPlayer2(code, s) {
+  roomCode = code; topic = TOPIC_PREFIX + code; isP1 = false;
+  enterGameScreen();
+  if (s?.roomCode === code) {
+    if (s.wins)                         wins        = s.wins;
+    if (s.playerNames)                  playerNames = s.playerNames;
+    if (typeof s.redIsP1 === 'boolean') redIsP1     = s.redIsP1;
+    if (s.board)                        { board = s.board.slice(); currentTurn = s.currentTurn || 'R'; }
+    applyRound(); refreshIdentity(); renderScores(); renderMatchup(); renderBoard(); renderColBtns(); updateStatus();
+  }
+  setConn('connecting', 'Connecting…');
+  connect(() => {
+    send({ t: 'rejoin', who: 'p2' });
+    roomConfirmed = false; clearTimeout(joinDeadline);
+    joinDeadline  = setTimeout(() => { joinDeadline = null; if (!roomConfirmed) leaveGame(); }, 3500);
+    sendHere();
+  });
+}
+
+/* ── button wiring ── */
+$('createBtn').addEventListener('click', createGame);
+$('joinBtn').addEventListener('click',   () => joinGame($('joinInput').value));
+$('joinInput').addEventListener('keydown', e => { if (e.key === 'Enter') joinGame(e.target.value); });
+
+$('copyBtn').addEventListener('click', () => {
+  navigator.clipboard.writeText(roomCode).then(() => {
+    $('copyBtn').textContent = 'Copied!';
+    setTimeout(() => $('copyBtn').textContent = 'Copy', 1200);
+  });
+});
+
+$('linkBtn').addEventListener('click', () => {
+  const url = `${location.origin}${location.pathname}?room=${roomCode}`;
+  navigator.clipboard.writeText(url).then(() => {
+    $('linkBtn').textContent = 'Link copied!';
+    setTimeout(() => $('linkBtn').textContent = 'Share link', 1200);
+  });
+});
+
+$('leaveBtn').addEventListener('click',   leaveGame);
+$('chatSendBtn').addEventListener('click', sendChat);
+$('chatInput').addEventListener('keydown', e => { if (e.key === 'Enter') sendChat(); });
+
+function announceName() {
+  if (isSpectator || !mySymbol) return;
+  send({ t: 'name', who: myKey(), name: playerNames[myKey()] || '' });
+}
+
+$('nameInput').addEventListener('input', e => {
+  if (!mySymbol || isSpectator) return;
+  const v = e.target.value.trim();
+  playerNames[myKey()] = v;
+  try { localStorage.setItem('ttt_name', v); } catch {}
+  applyRound(); renderMatchup(); renderScores(); updateStatus(); announceName(); saveSession();
+});
+
+/* ── auto-join from URL ── */
+window.addEventListener('DOMContentLoaded', () => {
+  const p  = new URLSearchParams(location.search);
+  const r  = p.get('room');
+  let s    = null; try { s = JSON.parse(sessionStorage.getItem('c4_session') || 'null'); } catch {}
+  if      (r && p.get('host')   === '1')                                      rejoinAsHost(r, s);
+  else if (r && p.get('player') === '2' && s?.roomCode === r && !s.isSpectator) rejoinAsPlayer2(r, s);
+  else if (r) { $('joinInput').value = r.toUpperCase(); joinGame(r); }
+});
+</script>
+</body>
+</html>
